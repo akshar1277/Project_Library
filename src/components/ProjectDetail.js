@@ -24,7 +24,19 @@ const ProjectDetail = () => {
         });
     };
     projectdata();
+
+
   }, [betch, id]);
+
+  // let language_array = data["Langauge"].split(", ");
+  // console.log(language_array);
+
+  // language_array.forEach((language) => {
+  //   console.log(language);
+
+  // })
+
+
 
   return (
     <>
@@ -43,59 +55,42 @@ const ProjectDetail = () => {
 
                 <div className="text-center mt-12">
                   <span className="bg-indigo-600 inline-block text-white text-xs font-semibold px-2.5 py-0.5 rounded-full h-5">
-                    Technology
+                    {data.Project_id}
                   </span>
                   <h3 className="my-3 text-[26px] font-semibold">
-                    My Very Minimal <br /> Interior Design Ideas
+                    {data.Project_name}
                   </h3>
 
                   <ul className="list-none mt-6">
                     <li className="inline-block font-semibold text-slate-400 mx-4">
                       {" "}
                       <span className="text-slate-900 dark:text-white block">
-                        Client :
+                        Batch :
                       </span>{" "}
-                      <span className="block">Calvin Carlo</span>
+                      <span className="block">{data.Batch}</span>
                     </li>
                     <li className="inline-block font-semibold text-slate-400 mx-4">
                       {" "}
                       <span className="text-slate-900 dark:text-white block">
-                        Date :
+                        Leader name :
                       </span>{" "}
-                      <span className="block">23th May, 2022</span>
+                      <span className="block">{data.Leader_name}</span>
                     </li>
                     <li className="inline-block font-semibold text-slate-400 mx-4">
                       {" "}
                       <span className="text-slate-900 dark:text-white block">
-                        Time :
+                        Internal Guide :
                       </span>{" "}
-                      <span className="block">8 Min Read</span>
+                      <span className="block">{data.Internal_guide}</span>
                     </li>
                   </ul>
                 </div>
 
                 <div className="mt-6">
                   <p className="text-slate-400">
-                    The most well-known dummy text is the 'Lorem Ipsum', which
-                    is said to have originated in the 16th century. Lorem Ipsum
-                    is composed in a pseudo-Latin language which more or less
-                    corresponds to 'proper' Latin. It contains a series of real
-                    Latin words. This ancient dummy text is also
-                    incomprehensible, but it imitates the rhythm of most
-                    European languages in Latin script.
+                    {data.Abstract}
                   </p>
-                  <p className="text-slate-400 italic border-x-4 border-indigo-600 ltr:rounded-tl-xl rtl:rounded-tr-xl ltr:rounded-br-xl rtl:rounded-bl-xl mt-3 p-3">
-                    " There are many variations of passages of Lorem Ipsum
-                    available, but the majority have suffered alteration in some
-                    form, by injected humour, or randomised words which don't
-                    look even slightly believable. "
-                  </p>
-                  <p className="text-slate-400 mt-3">
-                    The advantage of its Latin origin and the relative
-                    meaninglessness of Lorum Ipsum is that the text does not
-                    attract attention to itself or distract the viewer's
-                    attention from the layout.
-                  </p>
+
                 </div>
               </div>
             </div>
@@ -103,140 +98,72 @@ const ProjectDetail = () => {
             {/* Left side */}
 
             <div className="lg:col-span-4 md:col-span-6">
-              <div class="lg:col-span-4 md:col-span-5">
-                <div class="sticky top-20">
-                  <h5 class="text-lg font-semibold bg-gray-50 dark:bg-slate-800 shadow dark:shadow-gray-800 rounded-md p-2 text-center">
+              <div className="lg:col-span-4 md:col-span-5">
+                <div className="sticky top-20">
+                  <h5 className="text-lg font-semibold bg-gray-50 dark:bg-slate-800 shadow dark:shadow-gray-800 rounded-md p-2 text-center">
                     Project Info :
                   </h5>
-                  <dl class="grid grid-cols-12 mb-0 mt-4">
-                    <dt class="md:col-span-4 col-span-5 mt-2">Client :</dt>
-                    <dd class="md:col-span-8 col-span-7 mt-2 text-slate-400">
-                      Calvin Carlo
+                  <dl className="grid grid-cols-12 mb-0 mt-4">
+                    <dt className="md:col-span-4 col-span-5 mt-2">Academic Year:</dt>
+                    <dd className="md:col-span-8 col-span-7 mt-2 text-slate-400">
+                      {data.Batch}
                     </dd>
 
-                    <dt class="md:col-span-4 col-span-5 mt-2">Category :</dt>
-                    <dd class="md:col-span-8 col-span-7 mt-2 text-slate-400">
-                      Web Design
+                    <dt className="md:col-span-4 col-span-5 mt-2">Project type:</dt>
+                    <dd className="md:col-span-8 col-span-7 mt-2 text-slate-400">
+                      {data.Project_type}
                     </dd>
 
-                    <dt class="md:col-span-4 col-span-5 mt-2">Date :</dt>
-                    <dd class="md:col-span-8 col-span-7 mt-2 text-slate-400">
-                      23rd Sep, 2021
+                    <dt className="md:col-span-4 col-span-5 mt-2">Project Area:</dt>
+                    <dd className="md:col-span-8 col-span-7 mt-2 text-slate-400">
+                      {data.Project_area}
                     </dd>
 
-                    <dt class="md:col-span-4 col-span-5 mt-2">Website :</dt>
-                    <dd class="md:col-span-8 col-span-7 mt-2 text-slate-400">
-                      www.yourdomain.com
+                    <dt className="md:col-span-4 col-span-5 mt-2">Internal guide :</dt>
+                    <dd className="md:col-span-8 col-span-7 mt-2 text-slate-400">
+                      {data.Internal_guide}
                     </dd>
 
-                    <dt class="md:col-span-4 col-span-5 mt-2">Location :</dt>
-                    <dd class="md:col-span-8 col-span-7 mt-2 text-slate-400">
-                      3/2/64 Mongus Street, UK
+                    <dt className="md:col-span-4 col-span-5 mt-2">Leader_name :</dt>
+                    <dd className="md:col-span-8 col-span-7 mt-2 text-slate-400">
+                      {data.Leader_name}
                     </dd>
                   </dl>
 
-                  <h5 class="text-lg font-semibold bg-gray-50 dark:bg-slate-800 shadow dark:shadow-gray-800 rounded-md p-2 text-center mt-8">
-                    Tagscloud :
+                  <h5 className="text-lg font-semibold bg-gray-50 dark:bg-slate-800 shadow dark:shadow-gray-800 rounded-md p-2 text-center mt-8">
+                    Languages :
                   </h5>
-                  <ul class="list-none text-center mt-6">
-                    <li class="inline-block m-2">
-                      <a
-                        href=""
-                        class="px-3 py-1 text-slate-400 hover:text-white dark:hover:text-white bg-gray-50 dark:bg-slate-800 text-sm hover:bg-indigo-600 dark:hover:bg-indigo-600 rounded-md shadow dark:shadow-gray-800 transition-all duration-500 ease-in-out"
-                      >
-                        Business
-                      </a>
-                    </li>
-                    <li class="inline-block m-2">
-                      <a
-                        href=""
-                        class="px-3 py-1 text-slate-400 hover:text-white dark:hover:text-white bg-gray-50 dark:bg-slate-800 text-sm hover:bg-indigo-600 dark:hover:bg-indigo-600 rounded-md shadow dark:shadow-gray-800 transition-all duration-500 ease-in-out"
-                      >
-                        Finance
-                      </a>
-                    </li>
-                    <li class="inline-block m-2">
-                      <a
-                        href=""
-                        class="px-3 py-1 text-slate-400 hover:text-white dark:hover:text-white bg-gray-50 dark:bg-slate-800 text-sm hover:bg-indigo-600 dark:hover:bg-indigo-600 rounded-md shadow dark:shadow-gray-800 transition-all duration-500 ease-in-out"
-                      >
-                        Marketing
-                      </a>
-                    </li>
-                    <li class="inline-block m-2">
-                      <a
-                        href=""
-                        class="px-3 py-1 text-slate-400 hover:text-white dark:hover:text-white bg-gray-50 dark:bg-slate-800 text-sm hover:bg-indigo-600 dark:hover:bg-indigo-600 rounded-md shadow dark:shadow-gray-800 transition-all duration-500 ease-in-out"
-                      >
-                        Fashion
-                      </a>
-                    </li>
-                    <li class="inline-block m-2">
-                      <a
-                        href=""
-                        class="px-3 py-1 text-slate-400 hover:text-white dark:hover:text-white bg-gray-50 dark:bg-slate-800 text-sm hover:bg-indigo-600 dark:hover:bg-indigo-600 rounded-md shadow dark:shadow-gray-800 transition-all duration-500 ease-in-out"
-                      >
-                        Bride
-                      </a>
-                    </li>
-                    <li class="inline-block m-2">
-                      <a
-                        href=""
-                        class="px-3 py-1 text-slate-400 hover:text-white dark:hover:text-white bg-gray-50 dark:bg-slate-800 text-sm hover:bg-indigo-600 dark:hover:bg-indigo-600 rounded-md shadow dark:shadow-gray-800 transition-all duration-500 ease-in-out"
-                      >
-                        Lifestyle
-                      </a>
-                    </li>
-                    <li class="inline-block m-2">
-                      <a
-                        href=""
-                        class="px-3 py-1 text-slate-400 hover:text-white dark:hover:text-white bg-gray-50 dark:bg-slate-800 text-sm hover:bg-indigo-600 dark:hover:bg-indigo-600 rounded-md shadow dark:shadow-gray-800 transition-all duration-500 ease-in-out"
-                      >
-                        Travel
-                      </a>
-                    </li>
-                    <li class="inline-block m-2">
-                      <a
-                        href=""
-                        class="px-3 py-1 text-slate-400 hover:text-white dark:hover:text-white bg-gray-50 dark:bg-slate-800 text-sm hover:bg-indigo-600 dark:hover:bg-indigo-600 rounded-md shadow dark:shadow-gray-800 transition-all duration-500 ease-in-out"
-                      >
-                        Beauty
-                      </a>
-                    </li>
-                    <li class="inline-block m-2">
-                      <a
-                        href=""
-                        class="px-3 py-1 text-slate-400 hover:text-white dark:hover:text-white bg-gray-50 dark:bg-slate-800 text-sm hover:bg-indigo-600 dark:hover:bg-indigo-600 rounded-md shadow dark:shadow-gray-800 transition-all duration-500 ease-in-out"
-                      >
-                        Video
-                      </a>
-                    </li>
-                    <li class="inline-block m-2">
-                      <a
-                        href=""
-                        class="px-3 py-1 text-slate-400 hover:text-white dark:hover:text-white bg-gray-50 dark:bg-slate-800 text-sm hover:bg-indigo-600 dark:hover:bg-indigo-600 rounded-md shadow dark:shadow-gray-800 transition-all duration-500 ease-in-out"
-                      >
-                        Audio
-                      </a>
-                    </li>
-                  </ul>
 
-                  <h5 class="text-lg font-semibold bg-gray-50 dark:bg-slate-800 shadow dark:shadow-gray-800 rounded-md p-2 text-center mt-8">
+
+
+                  {data.Langauge && (
+                    <ul className="list-none text-center mt-6">
+                      {data.Langauge.split(",").map((language) => (
+                        <li key={language} className="inline-block m-2">
+                          <a className="btn btn-sm bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md cursor-pointer">
+                            {language}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+
+                  <h5 className="text-lg font-semibold bg-gray-50 dark:bg-slate-800 shadow dark:shadow-gray-800 rounded-md p-2 text-center mt-8">
                     Download :
                   </h5>
-                  <div class="flex p-4 justify-around">
+                  <div className="flex p-4 justify-around">
                     <div>
-                      <a class="btn btn-sm bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md cursor-pointer">
+                      <a href={data.Poster_URL} className="btn btn-sm bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md cursor-pointer">
                         Poster
                       </a>
                     </div>
                     <div>
-                      <a class="btn btn-sm bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md cursor-pointer">
+                      <a href={data.Document_URL} className="btn btn-sm bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md cursor-pointer">
                         Report
                       </a>
                     </div>
                     <div>
-                      <a class="btn btn-sm bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md cursor-pointer">
+                      <a href={data.Video_URL} className="btn btn-sm bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md cursor-pointer">
                         Video
                       </a>
                     </div>
