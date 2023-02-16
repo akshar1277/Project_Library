@@ -176,9 +176,9 @@ const Project = () => {
 
   return (
     <>
-   
 
-      <section className="relative table w-full py-32 lg:py-36 bg-[url('../../assets/images/blog/bg.jpg')] bg-center bg-no-repeat bg-cover">
+
+      <section className="relative table w-full py-32 lg:py-36 bg-[url('../../assets/images/blog/bg.jpg')] bg-center bg-no-repeat bg-cover ">
         <div className="absolute inset-0 bg-black opacity-80"></div>
         <div className="container">
           <div className="grid grid-cols-1 pb-8 text-center mt-10">
@@ -217,6 +217,203 @@ const Project = () => {
           <svg className="w-full h-auto" viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
           </svg>
+        </div>
+      </div>
+
+
+      {/* Modal Button */}
+
+      <div className="grid grid-cols-1 m-4 ml-10">
+
+        <button type="submit" className="btn bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md w-52">Filter Your Search</button>
+      </div>
+
+
+
+      {/* Modal box */}
+      <div class="flex justify-center my-auto backdrop-blur-sm">
+        <div class="w-1/3 my-20">
+          <div className="bg-white dark:bg-slate-900 shadow-md dark:shadow-gray-800 rounded-md lg:p-12 p-6 ltr:lg:ml-12 rtl:lg:mr-12">
+            <div className="section-title ">
+              {/* <span className="bg-indigo-600/5 text-indigo-600 text-xs font-bold px-2.5 py-0.5 rounded h-5">Reservation</span> */}
+              <h4 className="text-2xl font-bold uppercase">Filter your Projects</h4>
+              {/* <p className="text-slate-400 mx-auto para-desc">We make it a priority to offer flexible services to accomodate your needs</p> */}
+            </div>
+
+            <form>
+              <div className="grid md:grid-cols-2 gap-4 mt-6">
+                <div>
+                  <label className="font-semibold">Select Batch</label>
+
+                  <select name="batch" className="mt-2 form-input">
+                    <option value=" ">Select Batch</option>
+                    <option value="2020-2021" >2020-21</option>
+                    <option value="2019-2020">2019-20</option>
+
+                  </select>
+
+                </div>
+
+                <div>
+                  <label className="font-semibold">Project Type</label>
+
+                  <select name='type' className="form-input mt-2">
+                    <option value=" ">Select Project Type</option>
+                    <option value="UDP">IDP</option>
+                    <option value="IDP" >UDP</option>
+
+                  </select>
+
+
+                </div>
+
+                <div>
+                  <label className="font-semibold">Project Area</label>
+
+
+                  <select name='area' className="form-input mt-2">
+
+                    <option value=" ">Select Project Area</option>
+                    <option value="Application">Application</option>
+                    <option value="Application Software">Application Software
+                    </option>
+                    <option value="Computer Vision">Computer Vision</option>
+                    <option value="Data Science/ Data Mining">Data Science/ Data Mining
+                    </option>
+                    <option value="Desktop Application">Desktop Application
+                    </option>
+                    <option value="Holographic Technology">Holographic Technology
+                    </option>
+                    <option value="Image Processing using AI">Image Processing using AI
+                    </option>
+                    <option value="IOT">IOT</option>
+                    <option value="Mobile App">Mobile App
+                    </option>
+                    <option value="Natural Language Processing">Natural Language Processing
+                    </option>
+
+                    <option value="Network Security">Network Security
+                    </option>
+                    <option value="Portal">Portal
+                    </option>
+                    <option value="Software">Software</option>
+                    <option value="Website">Website</option>
+
+
+                  </select>
+
+                </div>
+
+                <div>
+                  <label className="font-semibold">Project Area</label>
+
+                  <select name='area' className="form-input mt-2">
+
+                    <option value=" ">Select Project Area</option>
+                    <option value="Application">Application</option>
+                    <option value="Application Software">Application Software
+                    </option>
+                    <option value="Computer Vision">Computer Vision</option>
+                    <option value="Data Science/ Data Mining">Data Science/ Data Mining
+                    </option>
+                    <option value="Desktop Application">Desktop Application
+                    </option>
+                    <option value="Holographic Technology">Holographic Technology
+                    </option>
+                    <option value="Image Processing using AI">Image Processing using AI
+                    </option>
+                    <option value="IOT">IOT</option>
+                    <option value="Mobile App">Mobile App
+                    </option>
+                    <option value="Natural Language Processing">Natural Language Processing
+                    </option>
+
+                    <option value="Network Security">Network Security
+                    </option>
+                    <option value="Portal">Portal
+                    </option>
+                    <option value="Software">Software</option>
+                    <option value="Website">Website</option>
+
+
+                  </select>
+
+
+                </div>
+                <div>
+                  <label className="font-semibold">language</label>
+
+                  <select name='language' className="form-input mt-2">
+                    <option value=" ">Select Language</option>
+                    <option value="Android">Android</option>
+                    <option value="C/C++">C/C++</option>
+                    <option value="Flutter">Flutter</option>
+                    <option value="HTML">HTML</option>
+                    <option value="IOS">IOS</option>
+                    <option value="JAVA">JAVA</option>
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="Node JS">Node JS</option>
+                    <option value="Python">Python</option>
+                    <option value="PHP">PHP</option>
+                  </select>
+
+                </div>
+
+                <div>
+                  <label className="font-semibold">Professor Name</label>
+
+
+                  <select name='professor' className="form-input mt-2 start">
+                    <option value=" ">Select Professor Name</option>
+
+                    <option value="Prof BAOza">Prof BAOza
+                    </option>
+
+                    <option value="Prof HBPandya">Prof HBPandya
+                    </option>
+                    <option value="Prof HKGevariya">Prof HKGevariya
+                    </option>
+                    <option value="Prof HiteshRajpoot">Prof HiteshRajpoot
+                    </option>
+
+                    <option value="Prof JayDave">Prof JayDave
+                    </option>
+                    <option value="Prof KMPatel">Prof KMPatel
+                    </option>
+
+                    <option value="Prof MKShah">Prof MKShah
+                    </option>
+                    <option value="Prof NikunjDomadiya">Prof NikunjDomadiya
+                    </option>
+                    <option value="Prof PGPatel">Prof PGPatel
+                    </option>
+                    <option value="Prof PinalSalot">Prof PinalSalot
+                    </option>
+                    <option value="Prof PRDave">Prof PRDave
+                    </option>
+                    <option value="POOJA DUTTA MAM">POOJA DUTTA MAM
+                    </option>
+
+
+                    <option value="Prof RJayswal">Prof RJayswal
+                    </option>
+                    <option value="Prof YogeshPatel">Prof YogeshPatel
+                    </option>
+                  </select>
+
+                </div>
+
+
+              </div>
+
+              <div className="grid grid-cols-1 mt-4">
+
+                <button type="submit" className="btn bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md w-full">Find Your Project</button>
+              </div>
+
+
+            </form>
+          </div>
         </div>
       </div>
 
@@ -291,38 +488,38 @@ const Project = () => {
                 </div>
               );
             })}
-          
+
         </div>
       </div>
 
-      <div  className="grid md:grid-cols-12 grid-cols-1 mt-8 mb-16">
+      <div className="grid md:grid-cols-12 grid-cols-1 mt-8 mb-16">
         <div className="md:col-span-12 text-center">
-        <nav aria-label="Page navigation example">
-        
+          <nav aria-label="Page navigation example">
 
-            
-          <ReactPaginate
-            breakLabel="..."
-            breakClassName={"w-[40px] h-[40px] inline-flex justify-center items-center text-slate-400 hover:text-white bg-white dark:bg-slate-900 border border-gray-100 dark:border-gray-700 hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 dark:hover:bg-indigo-600"}
-            nextLabel={<i class="uil uil-angle-right text-[20px] rtl:rotate-180 rtl:-mt-1"></i>}
-            
-            onPageChange={handlePageClick}
-            pageRangeDisplayed={5}
-            pageCount={pageCount}
-            previousLabel={ <i class="uil uil-angle-left text-[20px] rtl:rotate-180 rtl:-mt-1"></i>}
-            renderOnZeroPageCount={null}
-            containerClassName={
-              "inline-flex items-center -space-x-px"
-            }
-            nextLinkClassName={"w-[40px] h-[40px] inline-flex justify-center items-center text-slate-400 bg-white dark:bg-slate-900 ltr:rounded-r-lg rtl:rounded-l-lg hover:text-white border border-gray-100 dark:border-gray-700 hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 dark:hover:bg-indigo-600"}
-            previousLinkClassName={"w-[40px] h-[40px] inline-flex justify-center items-center text-slate-400 bg-white dark:bg-slate-900 ltr:rounded-l-lg rtl:rounded-r-lg hover:text-white border border-gray-100 dark:border-gray-700 hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 dark:hover:bg-indigo-600"}
-            activeClassName={"z-10 w-[40px] h-[40px] inline-flex justify-center items-center text-white bg-indigo-600 border border-indigo-600"}
-            pageClassName={"w-[40px] h-[40px] inline-flex justify-center items-center text-slate-400 hover:text-white bg-white dark:bg-slate-900 border border-gray-100 dark:border-gray-700 hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 dark:hover:bg-indigo-600"}
-           
-          />
+
+
+            <ReactPaginate
+              breakLabel="..."
+              breakClassName={"w-[40px] h-[40px] inline-flex justify-center items-center text-slate-400 hover:text-white bg-white dark:bg-slate-900 border border-gray-100 dark:border-gray-700 hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 dark:hover:bg-indigo-600"}
+              nextLabel={<i class="uil uil-angle-right text-[20px] rtl:rotate-180 rtl:-mt-1"></i>}
+
+              onPageChange={handlePageClick}
+              pageRangeDisplayed={5}
+              pageCount={pageCount}
+              previousLabel={<i class="uil uil-angle-left text-[20px] rtl:rotate-180 rtl:-mt-1"></i>}
+              renderOnZeroPageCount={null}
+              containerClassName={
+                "inline-flex items-center -space-x-px"
+              }
+              nextLinkClassName={"w-[40px] h-[40px] inline-flex justify-center items-center text-slate-400 bg-white dark:bg-slate-900 ltr:rounded-r-lg rtl:rounded-l-lg hover:text-white border border-gray-100 dark:border-gray-700 hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 dark:hover:bg-indigo-600"}
+              previousLinkClassName={"w-[40px] h-[40px] inline-flex justify-center items-center text-slate-400 bg-white dark:bg-slate-900 ltr:rounded-l-lg rtl:rounded-r-lg hover:text-white border border-gray-100 dark:border-gray-700 hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 dark:hover:bg-indigo-600"}
+              activeClassName={"z-10 w-[40px] h-[40px] inline-flex justify-center items-center text-white bg-indigo-600 border border-indigo-600"}
+              pageClassName={"w-[40px] h-[40px] inline-flex justify-center items-center text-slate-400 hover:text-white bg-white dark:bg-slate-900 border border-gray-100 dark:border-gray-700 hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 dark:hover:bg-indigo-600"}
+
+            />
           </nav>
-          </div>
-          </div>
+        </div>
+      </div>
     </>
   );
 };
