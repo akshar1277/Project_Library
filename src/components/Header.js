@@ -17,28 +17,29 @@ const Header = () => {
                         <img src="assets/images/logo-light.png" className="hidden dark:inline-block" alt="" />
                     </Link>
 
-                   
-                <div class="menu-extras">
-                    <div class="menu-item">
-                      
-                        <a class="navbar-toggle" id="isToggle" onclick="toggleMenu()">
-                            <div class="lines">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div>
-                        </a>
-                       
-                    </div>
-                </div>
 
-                    <div id="navigation" >
+                    <div class="menu-extras">
+                        <div class="menu-item">
+
+                            <a class="navbar-toggle" id="isToggle" onclick="toggleMenu()">
+                                <div class="lines">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </a>
+
+                        </div>
+                    </div>
+
+                    <div id="navigation">
 
                         <ul className="navigation-menu ">
                             <li><Link to="/" className="sub-menu-item">Home</Link></li>
+                            {/* <li><Link to="/notfound" className="sub-menu-item">Project Not Found</Link></li> */}
 
                             <li><Link to="/allprojects" className="sub-menu-item">All Projects</Link></li>
-                           
+
 
                             <li className="has-submenu parent-parent-menu-item">
                                 <a class="cursor-pointer" >Year</a>
@@ -75,7 +76,7 @@ const Header = () => {
                             </li>
 
                             <li className="has-submenu parent-parent-menu-item">
-                          
+
                                 <a class="cursor-pointer">Project Area</a>
                                 {/* <span className="menu-arrow "></span> */}
                                 <ul className="submenu">

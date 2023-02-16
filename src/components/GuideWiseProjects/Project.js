@@ -186,18 +186,14 @@ const Project = () => {
 
   return (
     <>
-      <section className="relative table w-full  py-44 bg-[url('../../assets/images/helpcenter.jpg')] bg-center bg-no-repeat bg-cover">
+      <section className="relative table w-full py-32 lg:py-36 bg-[url('../../assets/images/blog/bg.jpg')] bg-center bg-no-repeat bg-cover">
         <div className="absolute inset-0 bg-black opacity-80"></div>
         <div className="container">
           <div className="grid grid-cols-1 pb-8 text-center mt-10">
-            <h3 className="mb-6 md:text-4xl text-3xl md:leading-normal leading-normal font-medium text-white">
-              All Projects <br />
-              Start working with Techwind that can provide everything you need
-              to generate awareness, drive traffic, connect.
+            <h3 className="md:text-4xl text-3xl md:leading-normal leading-normal font-medium text-white">All Projects
             </h3>
-
             <div className="text-center subcribe-form mt-4 pt-2">
-              <form
+            <form
                 onSubmit={(e) => handlesearchsubmit(e)}
                 className="relative mx-auto max-w-xl"
               >
@@ -221,26 +217,21 @@ const Project = () => {
             </div>
           </div>
         </div>
+
+
       </section>
       <div className="relative">
         <div className="shape absolute right-0 sm:-bottom-px -bottom-[2px] left-0 overflow-hidden z-1 text-white dark:text-slate-900">
-          <svg
-            className="w-full h-auto"
-            viewBox="0 0 2880 48"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z"
-              fill="currentColor"
-            ></path>
+          <svg className="w-full h-auto" viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
           </svg>
         </div>
       </div>
 
+
       {isError !== "" && <h2>{isError}</h2>}
-      <div class="container md:mt-24 mt-16 mb-16">
-        <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-8 gap-[30px]">
+      <div className="container md:mt-24 mt-16 mb-16">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-8 gap-[30px]">
           {currentItems &&
             currentItems.map((post) => {
               const {
@@ -259,27 +250,27 @@ const Project = () => {
               } = post;
               return (
                 <div
-                  class="group relative rounded hover:-mt-1 shadow hover:shadow-md dark:shadow-gray-800 overflow-hidden transition-all duration-300"
+                  className="group relative rounded hover:-mt-1 shadow hover:shadow-md dark:shadow-gray-800 overflow-hidden transition-all duration-300"
                   key={id}
                 >
                   <div style={{"height":"234px","display": "flex",
 "justify-content": "center",
-"align-items": "center"}} class="relative  overflow-hidden">
+"align-items": "center"}} className="relative  overflow-hidden">
                     <img  style={{"height":"234px"}} src={Preview_URL} alt="" />
 
-                    <div class="absolute p-4 right-0 left-0 text-center bg-slate-900/80 -bottom-24 group-hover:bottom-0 transition-all duration-300">
+                    <div className="absolute p-4 right-0 left-0 text-center bg-slate-900/80 -bottom-24 group-hover:bottom-0 transition-all duration-300">
                       <Link to={`/details/${Batch}/${id}`}>
-                        <a class="btn btn-sm bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md">
+                        <a className="btn btn-sm bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md">
                           View More
                         </a>
                       </Link>
                     </div>
                   </div>
 
-                  <div class="p-4">
+                  <div className="p-4">
                     <Link
                       to={`/details/${Batch}/${id}`}
-                      class="text-indigo-600  hover:text-indigo-600 text-3xl font-semibold"
+                      className="text-indigo-600  hover:text-indigo-600 text-3xl font-semibold"
                     >
                       {Project_name}
                     </Link>
@@ -293,12 +284,12 @@ const Project = () => {
                         Internal_guide : {Internal_guide}
                       </div>
                     </div>
-                    <p class=" mt-2 text-start">{Abstract.slice(0, 200)}</p>
+                    <p className=" mt-2 text-start">{Abstract.slice(0, 200)}</p>
 
-                    <div class=" pr-4 pt-4 pb-4 pl-0  text-start   ">
+                    <div className=" pr-4 pt-4 pb-4 pl-0  text-start   ">
                       <Link
                         to={`/details/${Batch}/${id}`}
-                        class="btn btn-sm bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md"
+                        className="btn btn-sm bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md"
                       >
                         View More
                       </Link>
