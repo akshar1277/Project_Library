@@ -152,7 +152,12 @@ const Project = () => {
 
           setMyData(responseOne.data);
           setMyData2(responseTwo.data);
+          const storedData = localStorage.getItem('data');
+        
+          
           setData(responseData);
+          
+         
           setOriginalData(responseData);
 
           if (languages) {
@@ -162,6 +167,13 @@ const Project = () => {
       )
       .catch((error) => setIsError(error.message));
   }, []);
+  // to store data in local storage
+  useEffect(() => {
+    localStorage.setItem('data', JSON.stringify(data));
+  }, [data]);
+
+
+
 
   useEffect(() => {
     const endOffset = itemOffset + itemsPerPage;
@@ -280,12 +292,12 @@ const Project = () => {
 
               </div>
 
-              <form>
+              <form onSubmit={e=>handleSubmit(e)}>
                 <div className="grid md:grid-cols-2 gap-4 mt-6">
                   <div>
                     <label className="font-semibold">Select Batch</label>
 
-                    <select name="batch" className="mt-2 form-input">
+                    <select ame="batch" value={batch} onChange={handleChangeInput} className="mt-2 form-input">
 
                       <option value=" ">Select Batch</option>
                       <option value="2020-2021" >2020-21</option>
@@ -298,7 +310,7 @@ const Project = () => {
                   <div>
                     <label className="font-semibold">Project Type</label>
 
-                    <select name='type' className="form-input mt-2">
+                    <select name='type' value={type} onChange={handleChangeInput} className="form-input mt-2">
                       <option value=" ">Select Project Type</option>
                       <option value="UDP">IDP</option>
                       <option value="IDP" >UDP</option>
@@ -312,7 +324,7 @@ const Project = () => {
                     <label className="font-semibold">Project Area</label>
 
 
-                    <select name='area' className="form-input mt-2">
+                    <select name='area' value={area} onChange={handleChangeInput} className="form-input mt-2">
 
                       <option value=" ">Select Project Area</option>
                       <option value="Application">Application</option>
@@ -345,46 +357,11 @@ const Project = () => {
 
                   </div>
 
-                  <div>
-                    <label className="font-semibold">Project Area</label>
-
-                    <select name='area' className="form-input mt-2">
-
-                      <option value=" ">Select Project Area</option>
-                      <option value="Application">Application</option>
-                      <option value="Application Software">Application Software
-                      </option>
-                      <option value="Computer Vision">Computer Vision</option>
-                      <option value="Data Science/ Data Mining">Data Science/ Data Mining
-                      </option>
-                      <option value="Desktop Application">Desktop Application
-                      </option>
-                      <option value="Holographic Technology">Holographic Technology
-                      </option>
-                      <option value="Image Processing using AI">Image Processing using AI
-                      </option>
-                      <option value="IOT">IOT</option>
-                      <option value="Mobile App">Mobile App
-                      </option>
-                      <option value="Natural Language Processing">Natural Language Processing
-                      </option>
-
-                      <option value="Network Security">Network Security
-                      </option>
-                      <option value="Portal">Portal
-                      </option>
-                      <option value="Software">Software</option>
-                      <option value="Website">Website</option>
-
-
-                    </select>
-
-
-                  </div>
+                
                   <div>
                     <label className="font-semibold">language</label>
 
-                    <select name='language' className="form-input mt-2">
+                    <select name='language' value={language} onChange={handleChangeInput}className="form-input mt-2">
                       <option value=" ">Select Language</option>
                       <option value="Android">Android</option>
                       <option value="C/C++">C/C++</option>
@@ -404,41 +381,41 @@ const Project = () => {
                     <label className="font-semibold">Professor Name</label>
 
 
-                    <select name='professor' className="form-input mt-2 start">
+                    <select name='professor' value={professor} onChange={handleChangeInput} className="form-input mt-2 start">
                       <option value=" ">Select Professor Name</option>
 
-                      <option value="Prof BAOza">Prof BAOza
+                      <option value="bhavesh oza">Prof Bhavesh Oza
                       </option>
 
-                      <option value="Prof HBPandya">Prof HBPandya
+                      <option value="hetal pandya">Prof Hetal Pandya
                       </option>
-                      <option value="Prof HKGevariya">Prof HKGevariya
+                      <option value="hetal ghevariya">Prof Hetal Gevariya
                       </option>
-                      <option value="Prof HiteshRajpoot">Prof HiteshRajpoot
-                      </option>
-
-                      <option value="Prof JayDave">Prof JayDave
-                      </option>
-                      <option value="Prof KMPatel">Prof KMPatel
+                      <option value="hitesh rajpoot">Prof Hitesh Rajpoot
                       </option>
 
-                      <option value="Prof MKShah">Prof MKShah
+                      <option value="jay dave">Prof Jay Dave
                       </option>
-                      <option value="Prof NikunjDomadiya">Prof NikunjDomadiya
+                      <option value="kalpesh patel">Prof Kalpesh Patel
                       </option>
-                      <option value="Prof PGPatel">Prof PGPatel
+
+                      <option value="maitrik shah">Prof Maitrik Shah
                       </option>
-                      <option value="Prof PinalSalot">Prof PinalSalot
+                      <option value="nikunj domadiya">Prof Nikunj Domadiya
                       </option>
-                      <option value="Prof PRDave">Prof PRDave
+                      <option value="pragnesh patel">Prof Pragnesh Patel
                       </option>
-                      <option value="POOJA DUTTA MAM">POOJA DUTTA MAM
+                      <option value="pinal salot">Prof Pinal Salot
+                      </option>
+                      <option value="parth dave">Prof Parth Dave
+                      </option>
+                      <option value="dutta mam">POOJA Dutta Mam
                       </option>
 
 
-                      <option value="Prof RJayswal">Prof RJayswal
+                      <option value="rjayswal">Prof R. Jayswal
                       </option>
-                      <option value="Prof YogeshPatel">Prof YogeshPatel
+                      <option value="yogesh patel">Prof Yogesh Patel
                       </option>
                     </select>
 
@@ -449,7 +426,7 @@ const Project = () => {
 
                 <div className="grid grid-cols-1 mt-4">
 
-                  <button type="submit" className="btn bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md w-48 mx-auto">Find Your Project</button>
+                  <button type="submit" onClick={e=>handleSubmit(e)} className="btn bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md w-48 mx-auto">Find Your Project</button>
                 </div>
 
 

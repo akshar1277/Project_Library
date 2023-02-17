@@ -10,8 +10,8 @@ import { AiFillTwitterCircle } from 'react-icons/ai';
 const data = [
     {
         id: 1,
-        name: 'Ronny Jofra',
-        position: 'C.E.O.',
+        name: 'Prof Maitrik Shah',
+        position: 'Project Guide',
         image: "https://picsum.photos/id/237/200/200",
         links: [
             { icon: <AiFillLinkedin />, url: '#' },
@@ -21,8 +21,8 @@ const data = [
     },
     {
         id: 2,
-        name: 'Ronny Jofra',
-        position: 'C.E.O.',
+        name: 'Akshar Bhalani',
+        position: 'Full-Stack Developer',
         image: "https://picsum.photos/id/238/200/200",
         links: [
             { icon: <AiFillLinkedin />, url: '#' },
@@ -32,8 +32,8 @@ const data = [
     },
     {
         id: 3,
-        name: 'Ronny Jofra',
-        position: 'C.E.O.',
+        name: 'Harshal Kahar',
+        position: 'Front-end Developer',
         image: "https://picsum.photos/id/239/200/200",
         links: [
             { icon: <AiFillLinkedin />, url: '#' },
@@ -43,7 +43,7 @@ const data = [
     },
     {
         id: 4,
-        name: 'Ronny Jofra',
+        name: 'Karika Patel',
         position: 'C.E.O.',
         image: "https://picsum.photos/id/240/200/200",
         links: [
@@ -54,7 +54,7 @@ const data = [
     },
     {
         id: 5,
-        name: 'Ronny Jofra',
+        name: 'Viren Goswami',
         position: 'C.E.O.',
         image: "https://picsum.photos/id/241/200/200",
         links: [
@@ -65,7 +65,7 @@ const data = [
     },
     {
         id: 6,
-        name: 'Ronny Jofra',
+        name: 'Juhi Sodha',
         position: 'C.E.O.',
         image: "https://picsum.photos/id/242/200/200",
         links: [
@@ -76,7 +76,7 @@ const data = [
     },
     {
         id: 7,
-        name: 'Ronny Jofra',
+        name: 'Ishika Patel',
         position: 'C.E.O.',
         image: "https://picsum.photos/id/243/200/200",
         links: [
@@ -94,7 +94,7 @@ const ImageSlider = () => {
         infinite: true,
         speed: 500,
         slidesToShow: 4,
-        slidesToScroll: 1,
+        slidesToScroll: 4,
         prevArrow: <button className="slick-prev slick-arrow">Previous</button>,
         nextArrow: <button className="slick-next slick-arrow">Next</button>
     };
@@ -122,7 +122,7 @@ const ImageSlider = () => {
                             >
                                 {item.name}
                             </a>
-                            <span className="text-slate-400 block">Position</span>
+                            <span className="text-slate-400 block">{item.position}</span>
 
                             <p className="text-slate-400 mt-4">
                                 If the distribution of letters and 'words' is random

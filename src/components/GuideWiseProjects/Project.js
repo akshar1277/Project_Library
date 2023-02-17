@@ -184,6 +184,42 @@ const Project = () => {
     setItemOffset(newOffset);
   };
 
+    // for modal
+    const [showModal, setShowModal] = useState(false);
+
+    const handleCloseModal = () => {
+      setShowModal(false);
+      document.body.classList.remove('blur');
+  
+    }
+  
+    const handleOpenModal = () => {
+      setShowModal(true);
+  
+      document.body.classList.add('overflow');
+  
+  
+    }
+  
+  
+    useEffect(() => {
+      const handleClickOutsideModal = (event) => {
+        if (event.target.className === "modal") {
+          setShowModal(false);
+          document.body.classList.remove('overflow');
+  
+  
+  
+        }
+      };
+  
+      window.addEventListener("click", handleClickOutsideModal);
+  
+      return () => {
+        window.removeEventListener("click", handleClickOutsideModal);
+      };
+    }, []);
+
   return (
     <>
       <section className="relative table w-full py-32 lg:py-36 bg-[url('../../assets/images/blog/bg.jpg')] bg-center bg-no-repeat bg-cover">
@@ -228,7 +264,173 @@ const Project = () => {
         </div>
       </div>
 
+      <div>
 
+        {/* Modal Button */}
+
+        <div className="grid grid-cols-1 m-4 ml-10">
+
+          <button type="submit" className="btn bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md w-52" onClick={handleOpenModal}>Filter Your Search</button>
+        </div>
+
+        {showModal &&
+          <div className="modal">
+            <div className="modal-content">
+              {/* <span className="close" onClick={handleCloseModal}>&times;</span> */}
+
+              {/* <div className="bg-white dark:bg-slate-900 shadow-md dark:shadow-gray-800 rounded-md lg:p-12 p-6 ltr:lg:ml-12 rtl:lg:mr-12"> */}
+              <div className="section-title ">
+
+                <h4 className="text-2xl font-bold uppercase">Filter your Projects</h4>
+
+              </div>
+
+              <form onSubmit={e=>handleSubmit(e)}>
+                <div className="grid md:grid-cols-2 gap-4 mt-6">
+                  <div>
+                    <label className="font-semibold">Select Batch</label>
+
+                    <select ame="batch" value={batch} onChange={handleChangeInput} className="mt-2 form-input">
+
+                      <option value=" ">Select Batch</option>
+                      <option value="2020-2021" >2020-21</option>
+                      <option value="2019-2020">2019-20</option>
+
+                    </select>
+
+                  </div>
+
+                  <div>
+                    <label className="font-semibold">Project Type</label>
+
+                    <select name='type' value={type} onChange={handleChangeInput} className="form-input mt-2">
+                      <option value=" ">Select Project Type</option>
+                      <option value="UDP">IDP</option>
+                      <option value="IDP" >UDP</option>
+
+                    </select>
+
+
+                  </div>
+
+                  <div>
+                    <label className="font-semibold">Project Area</label>
+
+
+                    <select name='area' value={area} onChange={handleChangeInput} className="form-input mt-2">
+
+                      <option value=" ">Select Project Area</option>
+                      <option value="Application">Application</option>
+                      <option value="Application Software">Application Software
+                      </option>
+                      <option value="Computer Vision">Computer Vision</option>
+                      <option value="Data Science/ Data Mining">Data Science/ Data Mining
+                      </option>
+                      <option value="Desktop Application">Desktop Application
+                      </option>
+                      <option value="Holographic Technology">Holographic Technology
+                      </option>
+                      <option value="Image Processing using AI">Image Processing using AI
+                      </option>
+                      <option value="IOT">IOT</option>
+                      <option value="Mobile App">Mobile App
+                      </option>
+                      <option value="Natural Language Processing">Natural Language Processing
+                      </option>
+
+                      <option value="Network Security">Network Security
+                      </option>
+                      <option value="Portal">Portal
+                      </option>
+                      <option value="Software">Software</option>
+                      <option value="Website">Website</option>
+
+
+                    </select>
+
+                  </div>
+
+                
+                  <div>
+                    <label className="font-semibold">language</label>
+
+                    <select name='language' value={language} onChange={handleChangeInput}className="form-input mt-2">
+                      <option value=" ">Select Language</option>
+                      <option value="Android">Android</option>
+                      <option value="C/C++">C/C++</option>
+                      <option value="Flutter">Flutter</option>
+                      <option value="HTML">HTML</option>
+                      <option value="IOS">IOS</option>
+                      <option value="JAVA">JAVA</option>
+                      <option value="JavaScript">JavaScript</option>
+                      <option value="Node JS">Node JS</option>
+                      <option value="Python">Python</option>
+                      <option value="PHP">PHP</option>
+                    </select>
+
+                  </div>
+
+                  <div>
+                    <label className="font-semibold">Professor Name</label>
+
+
+                    <select name='professor' value={professor} onChange={handleChangeInput} className="form-input mt-2 start">
+                      <option value=" ">Select Professor Name</option>
+
+                      <option value="bhavesh oza">Prof Bhavesh Oza
+                      </option>
+
+                      <option value="hetal pandya">Prof Hetal Pandya
+                      </option>
+                      <option value="hetal ghevariya">Prof Hetal Gevariya
+                      </option>
+                      <option value="hitesh rajpoot">Prof Hitesh Rajpoot
+                      </option>
+
+                      <option value="jay dave">Prof Jay Dave
+                      </option>
+                      <option value="kalpesh patel">Prof Kalpesh Patel
+                      </option>
+
+                      <option value="maitrik shah">Prof Maitrik Shah
+                      </option>
+                      <option value="nikunj domadiya">Prof Nikunj Domadiya
+                      </option>
+                      <option value="pragnesh patel">Prof Pragnesh Patel
+                      </option>
+                      <option value="pinal salot">Prof Pinal Salot
+                      </option>
+                      <option value="parth dave">Prof Parth Dave
+                      </option>
+                      <option value="dutta mam">POOJA Dutta Mam
+                      </option>
+
+
+                      <option value="rjayswal">Prof R. Jayswal
+                      </option>
+                      <option value="yogesh patel">Prof Yogesh Patel
+                      </option>
+                    </select>
+
+                  </div>
+
+
+                </div>
+
+                <div className="grid grid-cols-1 mt-4">
+
+                  <button type="submit" onClick={e=>handleSubmit(e)} className="btn bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md w-48 mx-auto">Find Your Project</button>
+                </div>
+
+
+              </form>
+              {/* </div> */}
+
+
+            </div>
+          </div>
+        }
+      </div>
       {isError !== "" && <h2>{isError}</h2>}
       <div className="container md:mt-24 mt-16 mb-16">
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-8 gap-[30px]">

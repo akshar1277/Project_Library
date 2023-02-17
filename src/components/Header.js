@@ -56,18 +56,18 @@ const Header = () => {
                                 <ul className="submenu">
 
 
-                                    <li><Link to="/guidewiseallprojects/bhavesh oza" className="sub-menu-item">Prof B. A. Oza</Link></li>
-                                    <li><Link to="/guidewiseallprojects/hetal pandya" className="sub-menu-item">Prof H. B. Pandya</Link></li>
-                                    <li><Link to="/guidewiseallprojects/hetal ghevariya" className="sub-menu-item">Prof H. K. Gevariya</Link></li>
+                                    <li><Link to="/guidewiseallprojects/bhavesh oza" className="sub-menu-item">Prof Bhavesh Oza</Link></li>
+                                    <li><Link to="/guidewiseallprojects/hetal pandya" className="sub-menu-item">Prof Hetal Pandya</Link></li>
+                                    <li><Link to="/guidewiseallprojects/hetal ghevariya" className="sub-menu-item">Prof Hetal Gevariya</Link></li>
                                     <li><Link to="/guidewiseallprojects/hitesh rajpoot" className="sub-menu-item">Prof Hitesh Rajpoot</Link></li>
-                                    <li><Link to="/guidewiseallprojects/jay dave" className="sub-menu-item">Prof JayDave</Link></li>
-                                    <li><Link to="/guidewiseallprojects/kalpesh patel" className="sub-menu-item">Prof K. M. Patel</Link></li>
-                                    <li><Link to="/guidewiseallprojects/maitrik shah" className="sub-menu-item">Prof M. K. Shah</Link></li>
+                                    <li><Link to="/guidewiseallprojects/jay dave" className="sub-menu-item">Prof Jay Dave</Link></li>
+                                    <li><Link to="/guidewiseallprojects/kalpesh patel" className="sub-menu-item">Prof Kalpesh Patel</Link></li>
+                                    <li><Link to="/guidewiseallprojects/maitrik shah" className="sub-menu-item">Prof Maitrik Shah</Link></li>
                                     <li><Link to="/guidewiseallprojects/nikunj domadiya" className="sub-menu-item">Prof Nikunj Domadiya</Link></li>
-                                    <li><Link to="/guidewiseallprojects/pragnesh patel" className="sub-menu-item">Prof P. G. Patel</Link></li>
+                                    <li><Link to="/guidewiseallprojects/pragnesh patel" className="sub-menu-item">Prof Pragnesh Patel</Link></li>
                                     <li><Link to="/guidewiseallprojects/pinal salot" className="sub-menu-item">Prof Pinal Salot</Link></li>
-                                    <li><Link to="/guidewiseallprojects/parth dave" className="sub-menu-item">Prof P. R. Dave</Link></li>
-                                    <li><a href="/guidewiseallprojects/dutta mam" className="sub-menu-item">POOJA DUTTA MAM</a></li>
+                                    <li><Link to="/guidewiseallprojects/parth dave" className="sub-menu-item">Prof Parth Dave</Link></li>
+                                    <li><a href="/guidewiseallprojects/dutta mam" className="sub-menu-item">POOJA Dutta Mam</a></li>
                                     <li><Link to="/guidewiseallprojects/rjayswal" className="sub-menu-item">Prof R. Jayswal</Link></li>
                                     <li><Link to="/guidewiseallprojects/yogesh patel" className="sub-menu-item">Prof Yogesh Patel</Link></li>
                                 </ul>
