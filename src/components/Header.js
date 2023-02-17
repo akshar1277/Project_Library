@@ -13,7 +13,7 @@ const Header = () => {
                 <div className="container flex justify-between ">
 
                     <Link className="logo" to="/">
-                        <img src="textlogo.png" alt="Peoject Library" className='w-48 my-5' />
+                        <img src={process.env.PUBLIC_URL + '/textlogo.png' } alt="Peoject Library" className='w-48 my-5' />
                     </Link>
 
 

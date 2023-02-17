@@ -8,6 +8,7 @@ export default ChartContext;
 export const ChartProvider = ({children}) => {
 
     let [languages,setLanguages]=useState('');
+    let [hsearch,setHsearch]=useState('');
     const navigate = useNavigate();
 
     let setfilter=(lang)=>{
@@ -15,9 +16,17 @@ export const ChartProvider = ({children}) => {
         navigate('/allprojects')
 
     }
+
+    let setHfilter=(Hsearch)=>{
+        setLanguages(Hsearch);
+        navigate('/allprojects')
+
+    }
     let contextData = {
         languages:languages,
         setfilter:setfilter,
+        hsearch:hsearch,
+        setHfilter:setHfilter,
 
         
     }

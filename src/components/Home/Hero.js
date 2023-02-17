@@ -1,7 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import DepartmentsVideo from './DepartmentsVideo'
+import { useContext } from 'react';
+import ChartContext from '../../context/ChartContext';
 
 const Hero = () => {
+    let { setHfilter } = useContext(ChartContext);
+    const [searchform, setSearchform] = useState({ search: "" });
+    const { search } = searchform;
+
+    const handlesearchsubmit = (event) => {
+        event.preventDefault();
+        setHfilter(searchform.search.toLowerCase())
+       
+    };
+    const handlesearch = (event) => {
+        // event.preventDefault();
+        const { name, value } = event.target;
+        setSearchform({ ...searchform, [name]: value });
+      };
     return (
         <>
 
@@ -36,9 +52,12 @@ const Hero = () => {
                     <div className="grid grid-cols-1 pb-8 text-center mt-10">
                         <h3 className="md:text-4xl text-3xl md:leading-normal leading-normal font-medium text-white">Projects..!</h3>
                         <div className="text-center subcribe-form mt-4 pt-2">
-                            <form className="relative mx-auto max-w-xl">
-                                <input type="text" id="help" name="name" className=" input ltr:pr-40 rtl:pl-40 pb-4 ltr:pl-6 rtl:pr-6 w-full h-[50px] outline-none text-black dark:text-white rounded-full bg-white opacity-70 dark:bg-slate-900 border border-gray-100 dark:border-gray-700" placeholder="Search your questions or topic..." />
-                                <button type="submit" className="btn absolute top-[2px] ltr:right-[3px] rtl:left-[3px] h-[46px] bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-full searchButton">Search</button>
+                            <form onSubmit={(e) => handlesearchsubmit(e)}  className="relative mx-auto max-w-xl">
+                                <input type="text"  name="search"
+                  value={search}
+                  onChange={handlesearch} id="help"  className=" input ltr:pr-40 rtl:pl-40 pb-4 ltr:pl-6 rtl:pr-6 w-full h-[50px] outline-none text-black dark:text-white rounded-full bg-white opacity-70 dark:bg-slate-900 border border-gray-100 dark:border-gray-700" placeholder="Search your questions or topic..." />
+                                <button   type="button"
+                  onClick={handlesearchsubmit}  className="btn absolute top-[2px] ltr:right-[3px] rtl:left-[3px] h-[46px] bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-full searchButton">Search</button>
                             </form>
                         </div>
                     </div>

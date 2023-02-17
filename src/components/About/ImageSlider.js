@@ -6,13 +6,20 @@ import './Slider.css'
 import { AiFillGithub } from 'react-icons/ai';
 import { AiFillLinkedin } from 'react-icons/ai';
 import { AiFillTwitterCircle } from 'react-icons/ai';
+import akshar from './team/akshar2.jpg';
+import harshal from './team/harshal.jpg';
+import karika from './team/karika.jpg';
+import viren from './team/viren.jpg';
+import juhi from './team/juhi.jpg';
+import ishika from './team/ishika.jpg';
+
 
 const data = [
     {
         id: 1,
         name: 'Prof Maitrik Shah',
         position: 'Project Guide',
-        image: "https://picsum.photos/id/237/200/200",
+        image: "",
         links: [
             { icon: <AiFillLinkedin />, url: '#' },
             { icon: <AiFillGithub />, url: '#' },
@@ -23,18 +30,18 @@ const data = [
         id: 2,
         name: 'Akshar Bhalani',
         position: 'Full-Stack Developer',
-        image: "https://picsum.photos/id/238/200/200",
+        image:akshar,
         links: [
-            { icon: <AiFillLinkedin />, url: '#' },
-            { icon: <AiFillGithub />, url: '#' },
-            { icon: <AiFillTwitterCircle />, url: '#' },
+            { icon: <AiFillLinkedin />, url: 'https://www.linkedin.com/in/akshar-bhalani1277' },
+            { icon: <AiFillGithub />, url: 'https://github.com/akshar1277' },
+            { icon: <AiFillTwitterCircle />, url: 'https://twitter.com/b_akshar' },
         ],
     },
     {
         id: 3,
         name: 'Harshal Kahar',
-        position: 'Front-end Developer',
-        image: "https://picsum.photos/id/239/200/200",
+        position: 'Full-Stack Developer',
+        image: harshal,
         links: [
             { icon: <AiFillLinkedin />, url: '#' },
             { icon: <AiFillGithub />, url: '#' },
@@ -44,8 +51,8 @@ const data = [
     {
         id: 4,
         name: 'Karika Patel',
-        position: 'C.E.O.',
-        image: "https://picsum.photos/id/240/200/200",
+        position: '.',
+        image: karika,
         links: [
             { icon: <AiFillLinkedin />, url: '#' },
             { icon: <AiFillGithub />, url: '#' },
@@ -55,8 +62,8 @@ const data = [
     {
         id: 5,
         name: 'Viren Goswami',
-        position: 'C.E.O.',
-        image: "https://picsum.photos/id/241/200/200",
+        position: '.',
+        image: viren,
         links: [
             { icon: <AiFillLinkedin />, url: '#' },
             { icon: <AiFillGithub />, url: '#' },
@@ -66,8 +73,8 @@ const data = [
     {
         id: 6,
         name: 'Juhi Sodha',
-        position: 'C.E.O.',
-        image: "https://picsum.photos/id/242/200/200",
+        position: '.',
+        image: juhi,
         links: [
             { icon: <AiFillLinkedin />, url: '#' },
             { icon: <AiFillGithub />, url: '#' },
@@ -77,8 +84,8 @@ const data = [
     {
         id: 7,
         name: 'Ishika Patel',
-        position: 'C.E.O.',
-        image: "https://picsum.photos/id/243/200/200",
+        position: '.',
+        image: ishika,
         links: [
             { icon: <AiFillLinkedin />, url: '#' },
             { icon: <AiFillGithub />, url: '#' },
@@ -124,9 +131,9 @@ const ImageSlider = () => {
                             </a>
                             <span className="text-slate-400 block">{item.position}</span>
 
-                            <p className="text-slate-400 mt-4">
+                            {/* <p className="text-slate-400 mt-4">
                                 If the distribution of letters and 'words' is random
-                            </p>
+                            </p> */}
 
                             <ul className="list-none mt-4">
                                 {item.links.map((link, index) => (

@@ -7,7 +7,7 @@ import ChartContext from "../../context/ChartContext";
 import './Project.css';
 
 const Project = () => {
-  let { languages, setfilter } = useContext(ChartContext);
+  let { languages, setfilter,  hsearch, setHfilter } = useContext(ChartContext);
 
   const buttonStyle = {
     background: "linear-gradient(#009FFD, #2A2A72)",
@@ -82,23 +82,47 @@ const Project = () => {
   };
   //this is for filter by chart click
   const searchbychart = (l, rdata) => {
-    const filters3 = {
-      search2: l.toLowerCase(),
-    };
+ 
 
     // console.log(getSearch);
 
     const searchdata2 = rdata.filter(
       (item) =>
-        item.Project_name.toLowerCase().includes(l.toLowerCase()) ||
-        item.Abstract.toLowerCase().includes(l.toLowerCase()) ||
-        item.Langauge.toLowerCase().includes(l.toLowerCase()) ||
-        item.Project_area.toLowerCase().includes(l.toLowerCase())
+      item.Project_name.toLowerCase().includes(l.toLowerCase()) ||
+      item.Abstract.toLowerCase().includes(l.toLowerCase()) ||
+      item.Langauge.toLowerCase().includes(l.toLowerCase()) ||
+      item.Project_area.toLowerCase().includes(l.toLowerCase())
+     
+        
     );
 
     setData(searchdata2);
     setfilter("");
   };
+  //this is for home redirected project
+  const searchbyHome = (l, rdata) => {
+  
+
+    // console.log(getSearch);
+
+    const searchdataH = rdata.filter(
+      (item) =>
+      item.Project_name.toLowerCase().includes(l.toLowerCase()) ||
+      item.Batch.toString().includes(l.toLowerCase()) ||
+      item.Abstract.toLowerCase().includes(l.toLowerCase()) ||
+      item.Internal_guide.toLowerCase().includes(l.toLowerCase()) ||
+      item.Leader_name.toLowerCase().includes(l.toLowerCase()) ||
+      item.Project_type.toLowerCase().includes(l.toLowerCase()) ||
+      item.Langauge.toLowerCase().includes(l.toLowerCase()) ||
+      item.Project_area.toLowerCase().includes(l.toLowerCase())
+      
+    );
+
+    setData(searchdataH);
+    setHfilter("");
+  };
+
+
 
   //for filter
   const handlesearch = (event) => {
@@ -162,6 +186,10 @@ const Project = () => {
 
           if (languages) {
             searchbychart(languages, responseData);
+          }
+          if(hsearch){
+            searchbyHome(hsearch,responseData);
+
           }
         })
       )
