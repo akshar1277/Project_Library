@@ -313,12 +313,12 @@ const Project = () => {
           <ReactPaginate
             breakLabel="..."
             breakClassName={"w-[40px] h-[40px] inline-flex justify-center items-center text-slate-400 hover:text-white bg-white dark:bg-slate-900 border border-gray-100 dark:border-gray-700 hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 dark:hover:bg-indigo-600"}
-            nextLabel={<i class="uil uil-angle-right text-[20px] rtl:rotate-180 rtl:-mt-1"></i>}
+            nextLabel={<i className="uil uil-angle-right text-[20px] rtl:rotate-180 rtl:-mt-1"></i>}
             
             onPageChange={handlePageClick}
             pageRangeDisplayed={5}
             pageCount={pageCount}
-            previousLabel={ <i class="uil uil-angle-left text-[20px] rtl:rotate-180 rtl:-mt-1"></i>}
+            previousLabel={ <i className="uil uil-angle-left text-[20px] rtl:rotate-180 rtl:-mt-1"></i>}
             renderOnZeroPageCount={null}
             containerClassName={
               "inline-flex items-center -space-x-px"

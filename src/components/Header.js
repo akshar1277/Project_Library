@@ -18,11 +18,11 @@ const Header = () => {
                     </Link>
 
 
-                    <div class="menu-extras">
-                        <div class="menu-item">
+                    <div className="menu-extras">
+                        <div className="menu-item">
 
-                            <a class="navbar-toggle" id="isToggle" onclick="toggleMenu()">
-                                <div class="lines">
+                            <a className="navbar-toggle" id="isToggle" onclick="toggleMenu()">
+                                <div className="lines">
                                     <span></span>
                                     <span></span>
                                     <span></span>
@@ -42,7 +42,7 @@ const Header = () => {
 
 
                             <li className="has-submenu parent-parent-menu-item">
-                                <a class="cursor-pointer" >Year</a>
+                                <a className="cursor-pointer" >Year</a>
                                 {/* <span className="menu-arrow "></span> */}
 
                                 <ul className="submenu">
@@ -52,7 +52,7 @@ const Header = () => {
                                 </ul>
                             </li>
                             <li className="has-submenu parent-parent-menu-item">
-                                <a class="cursor-pointer">Guide</a>
+                                <a className="cursor-pointer">Guide</a>
                                 {/* <span className="menu-arrow "></span> */}
                                 <ul className="submenu">
 
@@ -77,7 +77,7 @@ const Header = () => {
 
                             <li className="has-submenu parent-parent-menu-item">
 
-                                <a class="cursor-pointer">Project Area</a>
+                                <a className="cursor-pointer">Project Area</a>
                                 {/* <span className="menu-arrow "></span> */}
                                 <ul className="submenu">
 
