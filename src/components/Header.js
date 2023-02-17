@@ -1,9 +1,9 @@
 import React from 'react'
 import '../App.css'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 const Header = () => {
-
 
 
 
@@ -35,7 +35,7 @@ const Header = () => {
                     <div id="navigation">
 
                         <ul className="navigation-menu ">
-                            <li><Link to="/" className="sub-menu-item">Home</Link></li>
+                            <li><Link to="/" className="sub-menu-item" >Home</Link></li>
                             {/* <li><Link to="/notfound" className="sub-menu-item">Project Not Found</Link></li> */}
 
                             <li><Link to="/allprojects" className="sub-menu-item">All Projects</Link></li>

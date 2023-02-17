@@ -7,11 +7,11 @@ const AllProjects = () => {
         <>
 
             <div>
-                <Header/>
-              
+                <Header />
 
-             <Project/>
-                
+
+                <Project />
+
             </div>
 
 
