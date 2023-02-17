@@ -1,5 +1,11 @@
 import React from 'react'
 import './Dashboard.css'
+import Pie1 from './Charts/Pie1';
+import Pie2 from './Charts/Pie2';
+import BarChart from './Charts/BarChart';
+import { GrProjects } from 'react-icons/gr';
+
+
 
 const Dashboard = () => {
     return (
@@ -20,9 +26,9 @@ const Dashboard = () => {
                                 <div className='text-gray-600'>IDP</div>
                                 <div className='text-3xl'>15</div>
                             </div>
-                            <div className='m-4'>
+                            <div className='m-4 text-2xl'>
 
-                                icon here
+                                <GrProjects></GrProjects>
 
 
                             </div>
@@ -37,9 +43,9 @@ const Dashboard = () => {
                                 <div className='text-gray-600'>UDP</div>
                                 <div className='text-3xl'>25</div>
                             </div>
-                            <div className='m-4'>
+                            <div className='m-4 text-2xl'>
 
-                                icon here
+                                <GrProjects></GrProjects>
                             </div>
                         </div>
 
@@ -52,9 +58,9 @@ const Dashboard = () => {
                                 <div className='text-gray-600'>Project Type</div>
                                 <div className='text-3xl'>15</div>
                             </div>
-                            <div className='m-4'>
+                            <div className='m-4 text-2xl'>
 
-                                icon here
+                                <GrProjects></GrProjects>
 
 
                             </div>
@@ -69,9 +75,9 @@ const Dashboard = () => {
                                 <div className='text-gray-600'>Project Type</div>
                                 <div className='text-3xl'>15</div>
                             </div>
-                            <div className='m-4'>
+                            <div className='m-4 text-2xl'>
 
-                                icon here
+                                <GrProjects></GrProjects>
 
 
                             </div>
@@ -83,11 +89,19 @@ const Dashboard = () => {
                 </div>
 
                 <div className="pie">
-                    <div className="chart">Pie Chart (Language wise)</div>
-                    <div className="chart">Pie chart (Project Area wise)</div>
+                    <div className="chart">Pie Chart (Language wise)
+                        <Pie1></Pie1>
+
+
+                    </div>
+                    <div className="chart">Pie chart (Project Area wise)
+                        <Pie2></Pie2></div>
                 </div>
                 <div className="bar">
-                    <div className="bar-chart">I am bar chart</div>
+                    <div className="bar-chart">I am bar chart
+                        <BarChart></BarChart>
+
+                    </div>
                 </div>
             </div>
         </>
