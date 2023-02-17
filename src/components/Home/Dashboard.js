@@ -62,6 +62,23 @@ const Dashboard = () => {
 
 
                     </div>
+                    <div className="box">
+
+                        <div className='flex justify-between'>
+                            <div className='flex flex-col gap-2'>
+                                <div className='text-gray-600'>Project Type</div>
+                                <div className='text-3xl'>15</div>
+                            </div>
+                            <div className='m-4'>
+
+                                icon here
+
+
+                            </div>
+                        </div>
+
+
+                    </div>
 
                 </div>
 

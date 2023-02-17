@@ -1,4 +1,5 @@
 import React from 'react'
+import { BsPlayCircle } from 'react-icons/bs';
 
 const DepartmentsVideo = () => {
     return (
@@ -13,7 +14,8 @@ const DepartmentsVideo = () => {
                             <div className="absolute bottom-2/4 translate-y-2/4 right-0 left-0 text-center">
                                 <a href="#!" data-type="youtube" data-id="yba7hPeTSjk"
                                     className="lightbox h-20 w-20 rounded-full shadow-lg dark:shadow-gray-800 inline-flex items-center justify-center bg-white dark:bg-slate-900 text-indigo-600 dark:text-white">
-                                    <i className="mdi mdi-play inline-flex items-center justify-center text-2xl"></i>
+
+                                    <BsPlayCircle className='text-5xl inline-flex items-center justify-center '></BsPlayCircle>
                                 </a>
                             </div>
                         </div>
