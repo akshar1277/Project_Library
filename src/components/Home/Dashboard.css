@@ -32,9 +32,9 @@
 }
 
 .box {
-    height:100px;
+    height: 100px;
     box-sizing: border-box;
-    background-color: white;
+    background-color: #fff;
     border: 2px solid #f2f2f2;
     padding: 20px;
     border-radius: 7.5px;
@@ -51,10 +51,12 @@
 }
 
 .chart {
-    background-color: white;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
     border: 2px solid #f2f2f2;
-    padding: 20px;
-    height: 450px;
+    padding: 17.5px;
+    height: 550px;
     border-radius: 7.5px;
     text-align: start;
     box-shadow: rgba(49, 49, 53, 0.05) 0px 4px 16px, rgba(39, 39, 42, 0.05) 0px 8px 32px;
@@ -69,7 +71,7 @@
 }
 
 .bar-chart {
-    background-color: white;
+    background-color: #fff;
     border: 2px solid #f2f2f2;
     padding: 20px;
     height: 350px;
