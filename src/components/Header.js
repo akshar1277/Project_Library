@@ -13,8 +13,7 @@ const Header = () => {
                 <div className="container flex justify-between ">
 
                     <Link className="logo" to="/">
-                        <img src="assets/images/logo-dark.png" className="inline-block dark:hidden" alt="" />
-                        <img src="assets/images/logo-light.png" className="hidden dark:inline-block" alt="" />
+                        <img src="textlogo.png" alt="Peoject Library" className='w-48 my-5' />
                     </Link>
 
 
