@@ -1,0 +1,32 @@
+.slider-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  padding: 16px;
+  width: 100%;
+}
+
+.card {
+  flex: 0 0 calc(25% - 16px);
+  margin-right: 16px;
+  scroll-snap-align: center;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+/* .slider-container {
+ 
+  position: relative;
+} */
+
+/* .card {
+ 
+  position: relative;
+  left: calc(-100% + (100% / 4) * 2);
+  transform: translateX(
+    calc(100% + 16px) * -${position / 100}%
+  ); 
+} */

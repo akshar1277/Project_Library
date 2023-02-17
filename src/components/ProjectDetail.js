@@ -153,17 +153,17 @@ const ProjectDetail = () => {
                   </h5>
                   <div className="flex p-4 justify-around">
                     <div>
-                      <a href={data.Poster_URL} className="btn btn-sm bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md cursor-pointer">
+                      <a href={data.Poster_URL} target="_blank" className="btn btn-sm bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md cursor-pointer">
                         Poster
                       </a>
                     </div>
                     <div>
-                      <a href={data.Document_URL} className="btn btn-sm bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md cursor-pointer">
+                      <a href={data.Document_URL} target="_blank" className="btn btn-sm bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md cursor-pointer">
                         Report
                       </a>
                     </div>
                     <div>
-                      <a href={data.Video_URL} className="btn btn-sm bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md cursor-pointer">
+                      <a href={data.Video_URL} target="_blank" className="btn btn-sm bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md cursor-pointer">
                         Video
                       </a>
                     </div>
