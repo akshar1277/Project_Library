@@ -43,9 +43,9 @@ const data = [
         position: 'Full-Stack Developer',
         image: harshal,
         links: [
-            { icon: <AiFillLinkedin />, url: '#' },
-            { icon: <AiFillGithub />, url: '#' },
-            { icon: <AiFillTwitterCircle />, url: '#' },
+            { icon: <AiFillLinkedin />, url: 'https://www.linkedin.com/in/harshal-kahar-4115a321b' },
+            { icon: <AiFillGithub />, url: 'https://github.com/harshal255' },
+            { icon: <AiFillTwitterCircle />, url: 'https://twitter.com/harshalkahar389' },
         ],
     },
     {
