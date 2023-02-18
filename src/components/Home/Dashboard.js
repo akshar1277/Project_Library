@@ -10,9 +10,9 @@ const Dashboard = () => {
     return (
         <>
             <div className="grid grid-cols-1 pb-8 text-center pt-14 dashboardheading">
-                <h3 className="mb-6 md:text-3xl text-2xl md:leading-normal leading-normal font-semibold">Welcome to the project dashboard.</h3>
+                <h3 className="mb-6 md:text-3xl text-2xl md:leading-normal leading-normal font-semibold">Welcome to the Project Library.</h3>
 
-                <p className="text-slate-400 w-2/3 mx-auto"> This platform provides an overview of all projects completed by our seniors, along with the ability to filter by language and project type. The dashboard also includes interactive chart graphs to help visualize project data, as well as a barchart to display project statistics by academic year. Use the filters to explore project details and gain insights into the skills and knowledge of our graduates.</p>
+                <p className="text-slate-400 w-2/3 mx-auto">This Plateform is designed to showcase the projects completed by students in the Computer Department. This platform offers a comprehensive collection of projects that were completed by our talented students over the years.</p>
             </div>
 
             <div className="dashboard">

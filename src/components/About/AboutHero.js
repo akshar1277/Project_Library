@@ -12,7 +12,7 @@ const Hero = () => {
                         <div className="grid grid-cols-1 pb-8 text-center mt-10">
                             <h3 className="mb-6 md:text-4xl text-3xl md:leading-normal leading-normal font-medium text-white">About Us</h3>
 
-                            <p className="text-slate-300 text-lg max-w-xl mx-auto">Start working with Tailwind CSS that can provide everything you need to generate awareness, drive traffic, connect.</p>
+                            <p className="text-slate-300 text-lg w-7/8 mx-auto text-justify">Project Library, is a comprehensive database that includes all projects completed by students in the Computer Department at LD College of Engineering in Ahmedabad. Our platform is designed to make it easy for students, faculty, and industry professionals to search, browse, and filter projects by different categories such as technology, project type, and year of completion. With our platform, users can access a diverse range of projects and gain valuable insights into the cutting-edge work being done by students at one of the leading engineering colleges in the region.</p>
                         </div>
                     </div>
 

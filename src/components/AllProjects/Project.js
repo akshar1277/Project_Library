@@ -249,23 +249,12 @@ const Project = () => {
 
 
   }
-  var filter_modal = document.getElementsByClassName('modal');
 
-  window.onclick = function (event) {
-
-    if (event.target == filter_modal) {
-
-      filter_modal.style.display = "hidden";
-
-    }
-
-
-
-  }
 
 
   useEffect(() => {
     const handleClickOutsideModal = (event) => {
+    
       if (event.target.className === "modal") {
         setShowModal(false);
         document.body.classList.remove('overflow');
@@ -279,9 +268,11 @@ const Project = () => {
 
     return () => {
       window.removeEventListener("click", handleClickOutsideModal);
-      console.log("event listing");
     };
   }, []);
+
+
+
   return (
     <>
 
