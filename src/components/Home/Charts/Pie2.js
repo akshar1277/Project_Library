@@ -109,22 +109,23 @@ const Pie2 = () => {
                 options={{
                     chart: {
                         type: 'pie',
-                        width: 600,
-                        height: 600,
+                        width: '100%',
+                        height: '100%',
+                        responsive: [{
+                            breakpoint: 480,
+                            options: {
+                                chart: {
+                                    width: '50%'
+                                },
+                                legend: {
+                                    position: 'bottom'
+                                }
+                            }
+                        }]
                     },
                     labels: chartdata.map((data) => data.Project_area),
 
-                    responsive: [{
-                        breakpoint: 480,
-                        options: {
-                            chart: {
-                                width: 200
-                            },
-                            legend: {
-                                position: 'bottom'
-                            }
-                        }
-                    }],
+
                     events: {
                         dataPointSelection: (event, chartContext, config) => {
                             console.log(chartContext, config);

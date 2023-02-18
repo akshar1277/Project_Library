@@ -1,11 +1,11 @@
 import React from 'react'
-import './projectnotfound.css';
+import './AllProjects/Project.css';
 
 const ProjectNotFound = () => {
     return (
 
         <>
-           
+
             <div className="flex flex-col mb-20 projectnotfound">
                 <div className="flex-grow"></div>
                 <div className="flex flex-col items-center justify-center">

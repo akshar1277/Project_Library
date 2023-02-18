@@ -10,7 +10,7 @@ import ProjectNotFound from "../ProjectNotFound";
 
 
 const Project = () => {
-  let { languages, setfilter,  hsearch, setHfilter } = useContext(ChartContext);
+  let { languages, setfilter, hsearch, setHfilter } = useContext(ChartContext);
 
   const buttonStyle = {
     background: "linear-gradient(#009FFD, #2A2A72)",
@@ -88,18 +88,18 @@ const Project = () => {
   };
   //this is for filter by chart click
   const searchbychart = (l, rdata) => {
- 
+
 
     // console.log(getSearch);
 
     const searchdata2 = rdata.filter(
       (item) =>
-      item.Project_name.toLowerCase().includes(l.toLowerCase()) ||
-      item.Abstract.toLowerCase().includes(l.toLowerCase()) ||
-      item.Langauge.toLowerCase().includes(l.toLowerCase()) ||
-      item.Project_area.toLowerCase().includes(l.toLowerCase())
-     
-        
+        item.Project_name.toLowerCase().includes(l.toLowerCase()) ||
+        item.Abstract.toLowerCase().includes(l.toLowerCase()) ||
+        item.Langauge.toLowerCase().includes(l.toLowerCase()) ||
+        item.Project_area.toLowerCase().includes(l.toLowerCase())
+
+
     );
 
     setData(searchdata2);
@@ -109,21 +109,21 @@ const Project = () => {
   };
   //this is for home redirected project
   const searchbyHome = (l, rdata) => {
-  
+
 
     // console.log(getSearch);
 
     const searchdataH = rdata.filter(
       (item) =>
-      item.Project_name.toLowerCase().includes(l.toLowerCase()) ||
-      item.Batch.toString().includes(l.toLowerCase()) ||
-      item.Abstract.toLowerCase().includes(l.toLowerCase()) ||
-      item.Internal_guide.toLowerCase().includes(l.toLowerCase()) ||
-      item.Leader_name.toLowerCase().includes(l.toLowerCase()) ||
-      item.Project_type.toLowerCase().includes(l.toLowerCase()) ||
-      item.Langauge.toLowerCase().includes(l.toLowerCase()) ||
-      item.Project_area.toLowerCase().includes(l.toLowerCase())
-      
+        item.Project_name.toLowerCase().includes(l.toLowerCase()) ||
+        item.Batch.toString().includes(l.toLowerCase()) ||
+        item.Abstract.toLowerCase().includes(l.toLowerCase()) ||
+        item.Internal_guide.toLowerCase().includes(l.toLowerCase()) ||
+        item.Leader_name.toLowerCase().includes(l.toLowerCase()) ||
+        item.Project_type.toLowerCase().includes(l.toLowerCase()) ||
+        item.Langauge.toLowerCase().includes(l.toLowerCase()) ||
+        item.Project_area.toLowerCase().includes(l.toLowerCase())
+
     );
 
     setData(searchdataH);
@@ -173,7 +173,7 @@ const Project = () => {
 
 
     setShowModal(false);
-    document.body.classList.remove('overflow');
+    // document.body.classList.remove('overflow');
   };
 
   // NOTE:  calling the function
@@ -203,8 +203,8 @@ const Project = () => {
           if (languages) {
             searchbychart(languages, responseData);
           }
-          if(hsearch){
-            searchbyHome(hsearch,responseData);
+          if (hsearch) {
+            searchbyHome(hsearch, responseData);
 
           }
         })
@@ -237,7 +237,7 @@ const Project = () => {
 
   const handleCloseModal = () => {
     setShowModal(false);
-    document.body.classList.remove('blur');
+    // document.body.classList.remove('overflow');
 
 
   }
@@ -249,14 +249,26 @@ const Project = () => {
 
 
   }
+  var filter_modal = document.getElementsByClassName('modal');
+
+  window.onclick = function (event) {
+
+    if (event.target == filter_modal) {
+
+      filter_modal.style.display = "hidden";
+
+    }
+
+
+
+  }
 
 
   useEffect(() => {
     const handleClickOutsideModal = (event) => {
       if (event.target.className === "modal") {
         setShowModal(false);
-        // document.body.classList.remove('overflow');
-        // console.log("Click Outside of the modal");
+        document.body.classList.remove('overflow');
 
 
 
@@ -267,9 +279,9 @@ const Project = () => {
 
     return () => {
       window.removeEventListener("click", handleClickOutsideModal);
+      console.log("event listing");
     };
   }, []);
-
   return (
     <>
 
