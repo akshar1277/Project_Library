@@ -6,6 +6,8 @@ import { useContext } from "react";
 import ChartContext from "../../context/ChartContext";
 import { useParams } from "react-router-dom";
 import './Project.css';
+import ProjectNotFound from "../ProjectNotFound";
+
 
 const Project = () => {
   let { languages, setfilter } = useContext(ChartContext);
@@ -25,6 +27,7 @@ const Project = () => {
   const [data, setData] = useState([]);
   const [currentPage, setcurrentPage] = useState(1);
   const [itemsPerPage, setitemsPerPage] = useState(9);
+  const [notfound, setNotfound] = useState(false);
 
   //this is for react paginate
   const [currentItems, setCurrentItems] = useState(null);
@@ -81,6 +84,8 @@ const Project = () => {
     );
 
     setData(searchdata);
+   
+    searchdata.length === 0 ? setNotfound(true) : setNotfound(false);
   };
   //this is for filter by chart click
   const searchbychart = (l, rdata) => {
@@ -136,6 +141,9 @@ const Project = () => {
     );
 
     setData(out);
+    out.length === 0 ? setNotfound(true) : setNotfound(false);
+    setShowModal(false);
+   
   };
 
   // NOTE:  calling the function
@@ -197,7 +205,7 @@ const Project = () => {
     const handleOpenModal = () => {
       setShowModal(true);
   
-      document.body.classList.add('overflow');
+      // document.body.classList.add('overflow');
   
   
     }
@@ -207,7 +215,7 @@ const Project = () => {
       const handleClickOutsideModal = (event) => {
         if (event.target.className === "modal") {
           setShowModal(false);
-          document.body.classList.remove('overflow');
+          // document.body.classList.remove('overflow');
   
   
   
@@ -277,48 +285,55 @@ const Project = () => {
         {showModal &&
           <div className="modal">
             <div className="modal-content">
-              {/* <span className="close" onClick={handleCloseModal}>&times;</span> */}
+              <span className="close -mt-5" onClick={handleCloseModal}>&times;</span>
 
-              {/* <div className="bg-white dark:bg-slate-900 shadow-md dark:shadow-gray-800 rounded-md lg:p-12 p-6 ltr:lg:ml-12 rtl:lg:mr-12"> */}
+
               <div className="section-title ">
 
-                <h4 className="text-2xl font-bold uppercase">Filter your Projects</h4>
+                <h4 className="text-1xl font-semibold uppercase">Filter your Projects</h4>
 
               </div>
 
-              <form onSubmit={e=>handleSubmit(e)}>
-                <div className="grid md:grid-cols-2 gap-4 mt-6">
-                  <div>
+              <form onSubmit={e => handleSubmit(e)}>
+                <div className="grid md:grid-cols-2 gap-8 mt-6 px-8">
+                  <div className="flex flex-col">
                     <label className="font-semibold">Select Batch</label>
 
-                    <select ame="batch" value={batch} onChange={handleChangeInput} className="mt-2 form-input">
 
-                      <option value=" ">Select Batch</option>
-                      <option value="2020-2021" >2020-21</option>
-                      <option value="2019-2020">2019-20</option>
+                    <select name='batch' value={batch} onChange={handleChangeInput} className="form-select mt-2">
+                      <option value="">Select Batch</option>
+                      <option value="2020-21">2020-21</option>
+                      <option value="2019-20">2019-20</option>
 
                     </select>
 
+
+
+
+
                   </div>
 
-                  <div>
+                  <div className="flex flex-col">
                     <label className="font-semibold">Project Type</label>
 
-                    <select name='type' value={type} onChange={handleChangeInput} className="form-input mt-2">
-                      <option value=" ">Select Project Type</option>
+                    <select name='type' value={type} onChange={handleChangeInput} className="form-select mt-2">
+                      <option value="">Select Project Type</option>
                       <option value="UDP">IDP</option>
                       <option value="IDP" >UDP</option>
 
                     </select>
 
 
+
                   </div>
 
-                  <div>
+
+
+                  <div className="flex flex-col">
                     <label className="font-semibold">Project Area</label>
 
 
-                    <select name='area' value={area} onChange={handleChangeInput} className="form-input mt-2">
+                    <select name='area' value={area} onChange={handleChangeInput} className="form-select mt-2">
 
                       <option value=" ">Select Project Area</option>
                       <option value="Application">Application</option>
@@ -349,13 +364,14 @@ const Project = () => {
 
                     </select>
 
+
                   </div>
 
-                
-                  <div>
+
+                  <div className="flex flex-col">
                     <label className="font-semibold">language</label>
 
-                    <select name='language' value={language} onChange={handleChangeInput}className="form-input mt-2">
+                    <select name='language' value={language} onChange={handleChangeInput} className="form-select mt-2">
                       <option value=" ">Select Language</option>
                       <option value="Android">Android</option>
                       <option value="C/C++">C/C++</option>
@@ -369,13 +385,15 @@ const Project = () => {
                       <option value="PHP">PHP</option>
                     </select>
 
+
                   </div>
 
-                  <div>
+
+                  <div className="flex flex-col">
                     <label className="font-semibold">Professor Name</label>
 
 
-                    <select name='professor' value={professor} onChange={handleChangeInput} className="form-input mt-2 start">
+                    <select name='professor' value={professor} onChange={handleChangeInput} className="form-select mt-2 start">
                       <option value=" ">Select Professor Name</option>
 
                       <option value="bhavesh oza">Prof Bhavesh Oza
@@ -413,15 +431,20 @@ const Project = () => {
                       </option>
                     </select>
 
+
+                  </div>
+
+                  <div className="grid grid-cols-1">
+                    <button type="submit" onClick={e => handleSubmit(e)} className="btn h-10 text-center item-center justify-content-center bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md w-60 mx-auto mt-7">Find Your Project</button>
+
                   </div>
 
 
+
+
                 </div>
 
-                <div className="grid grid-cols-1 mt-4">
 
-                  <button type="submit" onClick={e=>handleSubmit(e)} className="btn bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md w-48 mx-auto">Find Your Project</button>
-                </div>
 
 
               </form>
@@ -534,6 +557,8 @@ const Project = () => {
           </nav>
           </div>
           </div>
+
+          {notfound && (<>  <ProjectNotFound /></>)}
     </>
   );
 };

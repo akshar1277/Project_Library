@@ -4,13 +4,14 @@ import { BsPlayCircle } from 'react-icons/bs';
 const DepartmentsVideo = () => {
     return (
         <>
+        
 
 
             <div className="container md:mt-24 mt-16 mb-16">
                 <div className="grid md:grid-cols-12 grid-cols-1 items-center gap-28">
                     <div className="md:col-span-5">
                         <div className="relative">
-                            <img src="assets/images/company/about2.png" className="mx-auto" alt="" />
+                            <img src="https://res.cloudinary.com/dlsxq98fr/image/upload/v1676737018/compress_department_ja3mpg.png" className="mx-auto" alt="10" />
                             <div className="absolute bottom-2/4 translate-y-2/4 right-0 left-0 text-center">
                                 <a href="https://drive.google.com/file/d/1PQDj4Nf4q-V3TKBJgdEsD8g6zWqzl646/view?usp=share_link" target="_blank" data-type="youtube" data-id="yba7hPeTSjk"
                                     className="lightbox h-20 w-20 rounded-full shadow-lg dark:shadow-gray-800 inline-flex items-center justify-center bg-white dark:bg-slate-900 text-indigo-600 dark:text-white">
