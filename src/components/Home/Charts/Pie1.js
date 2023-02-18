@@ -124,8 +124,19 @@ const Pie1 = () => {
                 options={{
                     chart: {
                         type: 'pie',
-                        width: '200px',
-                        height: '200px',
+                        width: '30%',
+                        height: '30%',
+                        responsive: [{
+                            breakpoint: 480,
+                            options: {
+                                chart: {
+                                    width: '100%'
+                                },
+                                legend: {
+                                    position: 'bottom'
+                                }
+                            }
+                        }]
                     },
                     labels: chartdata.map((data) => data.Langauge),
                     chart: {

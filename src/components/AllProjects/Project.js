@@ -5,9 +5,12 @@ import ReactPaginate from "react-paginate";
 import { useContext } from "react";
 import ChartContext from "../../context/ChartContext";
 import './Project.css';
+import ProjectNotFound from "../ProjectNotFound";
+
+
 
 const Project = () => {
-  let { languages, setfilter,  hsearch, setHfilter } = useContext(ChartContext);
+  let { languages, setfilter, hsearch, setHfilter } = useContext(ChartContext);
 
   const buttonStyle = {
     background: "linear-gradient(#009FFD, #2A2A72)",
@@ -23,6 +26,8 @@ const Project = () => {
   const [data, setData] = useState([]);
   const [currentPage, setcurrentPage] = useState(1);
   const [itemsPerPage, setitemsPerPage] = useState(9);
+  const [showModal, setShowModal] = useState(false);
+  const [notfound, setNotfound] = useState(false);
 
   //this is for react paginate
   const [currentItems, setCurrentItems] = useState(null);
@@ -79,43 +84,46 @@ const Project = () => {
     );
 
     setData(searchdata);
+    searchdata.length === 0 ? setNotfound(true) : setNotfound(false);
   };
   //this is for filter by chart click
   const searchbychart = (l, rdata) => {
- 
+
 
     // console.log(getSearch);
 
     const searchdata2 = rdata.filter(
       (item) =>
-      item.Project_name.toLowerCase().includes(l.toLowerCase()) ||
-      item.Abstract.toLowerCase().includes(l.toLowerCase()) ||
-      item.Langauge.toLowerCase().includes(l.toLowerCase()) ||
-      item.Project_area.toLowerCase().includes(l.toLowerCase())
-     
-        
+        item.Project_name.toLowerCase().includes(l.toLowerCase()) ||
+        item.Abstract.toLowerCase().includes(l.toLowerCase()) ||
+        item.Langauge.toLowerCase().includes(l.toLowerCase()) ||
+        item.Project_area.toLowerCase().includes(l.toLowerCase())
+
+
     );
 
     setData(searchdata2);
     setfilter("");
+
+
   };
   //this is for home redirected project
   const searchbyHome = (l, rdata) => {
-  
+
 
     // console.log(getSearch);
 
     const searchdataH = rdata.filter(
       (item) =>
-      item.Project_name.toLowerCase().includes(l.toLowerCase()) ||
-      item.Batch.toString().includes(l.toLowerCase()) ||
-      item.Abstract.toLowerCase().includes(l.toLowerCase()) ||
-      item.Internal_guide.toLowerCase().includes(l.toLowerCase()) ||
-      item.Leader_name.toLowerCase().includes(l.toLowerCase()) ||
-      item.Project_type.toLowerCase().includes(l.toLowerCase()) ||
-      item.Langauge.toLowerCase().includes(l.toLowerCase()) ||
-      item.Project_area.toLowerCase().includes(l.toLowerCase())
-      
+        item.Project_name.toLowerCase().includes(l.toLowerCase()) ||
+        item.Batch.toString().includes(l.toLowerCase()) ||
+        item.Abstract.toLowerCase().includes(l.toLowerCase()) ||
+        item.Internal_guide.toLowerCase().includes(l.toLowerCase()) ||
+        item.Leader_name.toLowerCase().includes(l.toLowerCase()) ||
+        item.Project_type.toLowerCase().includes(l.toLowerCase()) ||
+        item.Langauge.toLowerCase().includes(l.toLowerCase()) ||
+        item.Project_area.toLowerCase().includes(l.toLowerCase())
+
     );
 
     setData(searchdataH);
@@ -158,6 +166,14 @@ const Project = () => {
     );
 
     setData(out);
+    // console.log(out);
+    // for not found page
+    out.length === 0 ? setNotfound(true) : setNotfound(false);
+
+
+
+    setShowModal(false);
+    // document.body.classList.remove('overflow');
   };
 
   // NOTE:  calling the function
@@ -177,18 +193,18 @@ const Project = () => {
           setMyData(responseOne.data);
           setMyData2(responseTwo.data);
           const storedData = localStorage.getItem('data');
-        
-          
+
+
           setData(responseData);
-          
-         
+
+
           setOriginalData(responseData);
 
           if (languages) {
             searchbychart(languages, responseData);
           }
-          if(hsearch){
-            searchbyHome(hsearch,responseData);
+          if (hsearch) {
+            searchbyHome(hsearch, responseData);
 
           }
         })
@@ -217,18 +233,32 @@ const Project = () => {
 
 
   // for modal
-  const [showModal, setShowModal] = useState(false);
+
 
   const handleCloseModal = () => {
     setShowModal(false);
-    document.body.classList.remove('blur');
+    // document.body.classList.remove('overflow');
+
 
   }
 
   const handleOpenModal = () => {
     setShowModal(true);
 
-    document.body.classList.add('overflow');
+    // document.body.classList.add('overflow');
+
+
+  }
+  var filter_modal = document.getElementsByClassName('modal');
+
+  window.onclick = function (event) {
+
+    if (event.target == filter_modal) {
+
+      filter_modal.style.display = "hidden";
+
+    }
+
 
 
   }
@@ -249,9 +279,9 @@ const Project = () => {
 
     return () => {
       window.removeEventListener("click", handleClickOutsideModal);
+      console.log("event listing");
     };
   }, []);
-
   return (
     <>
 
@@ -305,54 +335,61 @@ const Project = () => {
 
         <div className="grid grid-cols-1 m-4 ml-10">
 
-          <button type="submit" className="btn bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md w-52" onClick={handleOpenModal}>Filter Your Search</button>
+          <button type="submit" className="btn  bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md w-52" onClick={handleOpenModal}>Filter Your Search</button>
         </div>
 
         {showModal &&
-          <div className="modal">
+          <div className="modal pb-14">
             <div className="modal-content">
-              {/* <span className="close" onClick={handleCloseModal}>&times;</span> */}
+              <span className="close -mt-5" onClick={handleCloseModal}>&times;</span>
 
-              {/* <div className="bg-white dark:bg-slate-900 shadow-md dark:shadow-gray-800 rounded-md lg:p-12 p-6 ltr:lg:ml-12 rtl:lg:mr-12"> */}
+
               <div className="section-title ">
 
-                <h4 className="text-2xl font-bold uppercase">Filter your Projects</h4>
+                <h4 className="text-1xl font-semibold uppercase">Filter your Projects</h4>
 
               </div>
 
-              <form onSubmit={e=>handleSubmit(e)}>
-                <div className="grid md:grid-cols-2 gap-4 mt-6">
-                  <div>
+              <form onSubmit={e => handleSubmit(e)}>
+                <div className="grid md:grid-cols-2 gap-8 mt-6 px-8">
+                  <div className="flex flex-col">
                     <label className="font-semibold">Select Batch</label>
 
-                    <select ame="batch" value={batch} onChange={handleChangeInput} className="mt-2 form-input">
 
-                      <option value=" ">Select Batch</option>
-                      <option value="2020-2021" >2020-21</option>
-                      <option value="2019-2020">2019-20</option>
+                    <select name='batch' value={batch} onChange={handleChangeInput} className="form-select mt-2">
+                      <option value="">Select Batch</option>
+                      <option value="2020-21">2020-21</option>
+                      <option value="2019-20">2019-20</option>
 
                     </select>
 
+
+
+
+
                   </div>
 
-                  <div>
+                  <div className="flex flex-col">
                     <label className="font-semibold">Project Type</label>
 
-                    <select name='type' value={type} onChange={handleChangeInput} className="form-input mt-2">
-                      <option value=" ">Select Project Type</option>
+                    <select name='type' value={type} onChange={handleChangeInput} className="form-select mt-2">
+                      <option value="">Select Project Type</option>
                       <option value="UDP">IDP</option>
                       <option value="IDP" >UDP</option>
 
                     </select>
 
 
+
                   </div>
 
-                  <div>
+
+
+                  <div className="flex flex-col">
                     <label className="font-semibold">Project Area</label>
 
 
-                    <select name='area' value={area} onChange={handleChangeInput} className="form-input mt-2">
+                    <select name='area' value={area} onChange={handleChangeInput} className="form-select mt-2">
 
                       <option value=" ">Select Project Area</option>
                       <option value="Application">Application</option>
@@ -383,13 +420,14 @@ const Project = () => {
 
                     </select>
 
+
                   </div>
 
-                
-                  <div>
+
+                  <div className="flex flex-col">
                     <label className="font-semibold">language</label>
 
-                    <select name='language' value={language} onChange={handleChangeInput}className="form-input mt-2">
+                    <select name='language' value={language} onChange={handleChangeInput} className="form-select mt-2">
                       <option value=" ">Select Language</option>
                       <option value="Android">Android</option>
                       <option value="C/C++">C/C++</option>
@@ -403,13 +441,15 @@ const Project = () => {
                       <option value="PHP">PHP</option>
                     </select>
 
+
                   </div>
 
-                  <div>
+
+                  <div className="flex flex-col">
                     <label className="font-semibold">Professor Name</label>
 
 
-                    <select name='professor' value={professor} onChange={handleChangeInput} className="form-input mt-2 start">
+                    <select name='professor' value={professor} onChange={handleChangeInput} className="form-select mt-2 start">
                       <option value=" ">Select Professor Name</option>
 
                       <option value="bhavesh oza">Prof Bhavesh Oza
@@ -447,15 +487,20 @@ const Project = () => {
                       </option>
                     </select>
 
+
+                  </div>
+
+                  <div className="grid grid-cols-1">
+                    <button type="submit" onClick={e => handleSubmit(e)} className="btn h-10 text-center item-center justify-content-center bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md w-60 mx-auto mt-7">Find Your Project</button>
+
                   </div>
 
 
+
+
                 </div>
 
-                <div className="grid grid-cols-1 mt-4">
 
-                  <button type="submit" onClick={e=>handleSubmit(e)} className="btn bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md w-48 mx-auto">Find Your Project</button>
-                </div>
 
 
               </form>
@@ -476,8 +521,8 @@ const Project = () => {
 
       {/* Modal box */}
 
-
-      {isError !== "" && <h2>{isError}</h2>}
+      {/* {isError !== "" && <h2>{isError}</h2>} */}
+      {/* project exist start here */}
       <div className="container md:mt-24 mt-16 mb-16">
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-8 gap-[30px]">
           {currentItems &&
@@ -580,6 +625,11 @@ const Project = () => {
           </nav>
         </div>
       </div>
+
+      {/* project exist end here */}
+
+
+      {notfound && (<>  <ProjectNotFound /></>)}
     </>
   );
 };

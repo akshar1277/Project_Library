@@ -43,9 +43,9 @@ const data = [
         position: 'Full-Stack Developer',
         image: harshal,
         links: [
-            { icon: <AiFillLinkedin />, url: '#' },
-            { icon: <AiFillGithub />, url: '#' },
-            { icon: <AiFillTwitterCircle />, url: '#' },
+            { icon: <AiFillLinkedin />, url: 'https://www.linkedin.com/in/harshal-kahar-4115a321b' },
+            { icon: <AiFillGithub />, url: 'https://github.com/harshal255' },
+            { icon: <AiFillTwitterCircle />, url: 'https://twitter.com/harshalkahar389' },
         ],
     },
     {
@@ -54,9 +54,9 @@ const data = [
         position: '.',
         image: karika,
         links: [
-            { icon: <AiFillLinkedin />, url: '#' },
-            { icon: <AiFillGithub />, url: '#' },
-            { icon: <AiFillTwitterCircle />, url: '#' },
+            { icon: <AiFillLinkedin />, url: 'https://www.linkedin.com/in/karika-patel-435b26223' },
+            { icon: <AiFillGithub />, url: 'https://github.com/karikapatel29' },
+            { icon: <AiFillTwitterCircle />, url: 'https://mobile.twitter.com/karika_patel' },
         ],
     },
     {
@@ -65,8 +65,8 @@ const data = [
         position: '.',
         image: viren,
         links: [
-            { icon: <AiFillLinkedin />, url: '#' },
-            { icon: <AiFillGithub />, url: '#' },
+            { icon: <AiFillLinkedin />, url: 'https://www.linkedin.com/in/viren-goswami-284572221' },
+            { icon: <AiFillGithub />, url: 'https://github.com/Viren2003' },
             { icon: <AiFillTwitterCircle />, url: '#' },
         ],
     },
@@ -76,8 +76,8 @@ const data = [
         position: '.',
         image: juhi,
         links: [
-            { icon: <AiFillLinkedin />, url: '#' },
-            { icon: <AiFillGithub />, url: '#' },
+            { icon: <AiFillLinkedin />, url: 'https://github.com/juhisodha' },
+            { icon: <AiFillGithub />, url: 'http://www.linkedin.com/in/juhi-sodha-510188225' },
             { icon: <AiFillTwitterCircle />, url: '#' },
         ],
     },
@@ -87,9 +87,9 @@ const data = [
         position: '.',
         image: ishika,
         links: [
-            { icon: <AiFillLinkedin />, url: '#' },
-            { icon: <AiFillGithub />, url: '#' },
-            { icon: <AiFillTwitterCircle />, url: '#' },
+            { icon: <AiFillLinkedin />, url: 'https://www.linkedin.com/in/ishika-patel-8a0161210/' },
+            { icon: <AiFillGithub />, url: 'https://github.com/ishi2409' },
+            { icon: <AiFillTwitterCircle />, url: 'https://twitter.com/Ishika_2409' },
         ],
     },
 

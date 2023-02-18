@@ -124,9 +124,13 @@ const ProjectDetail = () => {
                       {data.Internal_guide}
                     </dd>
 
-                    <dt className="md:col-span-4 col-span-5 mt-2">Leader_name :</dt>
+                    <dt className="md:col-span-4 col-span-5 mt-2">Leader name :</dt>
                     <dd className="md:col-span-8 col-span-7 mt-2 text-slate-400">
                       {data.Leader_name}
+                    </dd>
+                    <dt className="md:col-span-4 col-span-5 mt-2">Leader Email :</dt>
+                    <dd className="md:col-span-8 col-span-7 mt-2 text-slate-400">
+                      {data.Leader_email}
                     </dd>
                   </dl>
 
