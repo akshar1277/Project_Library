@@ -5,6 +5,7 @@ import ReactPaginate from "react-paginate";
 import { useContext } from "react";
 import ChartContext from "../../context/ChartContext";
 import { useParams } from "react-router-dom";
+import './Project.css';
 
 const Project = () => {
   let { languages, setfilter } = useContext(ChartContext);

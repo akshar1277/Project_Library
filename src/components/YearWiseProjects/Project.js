@@ -5,6 +5,7 @@ import ReactPaginate from "react-paginate";
 import { useContext } from "react";
 import ChartContext from "../../context/ChartContext";
 import { useParams } from "react-router-dom";
+import './Project.css';
 
 const Project = () => {
   let { languages, setfilter } = useContext(ChartContext);
@@ -183,41 +184,41 @@ const Project = () => {
     setItemOffset(newOffset);
   };
 
-    // for modal
-    const [showModal, setShowModal] = useState(false);
+  // for modal
+  const [showModal, setShowModal] = useState(false);
 
-    const handleCloseModal = () => {
-      setShowModal(false);
-      document.body.classList.remove('blur');
-  
-    }
-  
-    const handleOpenModal = () => {
-      setShowModal(true);
-  
-      document.body.classList.add('overflow');
-  
-  
-    }
-  
-  
-    useEffect(() => {
-      const handleClickOutsideModal = (event) => {
-        if (event.target.className === "modal") {
-          setShowModal(false);
-          document.body.classList.remove('overflow');
-  
-  
-  
-        }
-      };
-  
-      window.addEventListener("click", handleClickOutsideModal);
-  
-      return () => {
-        window.removeEventListener("click", handleClickOutsideModal);
-      };
-    }, []);
+  const handleCloseModal = () => {
+    setShowModal(false);
+    document.body.classList.remove('blur');
+
+  }
+
+  const handleOpenModal = () => {
+    setShowModal(true);
+
+    document.body.classList.add('overflow');
+
+
+  }
+
+
+  useEffect(() => {
+    const handleClickOutsideModal = (event) => {
+      if (event.target.className === "modal") {
+        setShowModal(false);
+        document.body.classList.remove('overflow');
+
+
+
+      }
+    };
+
+    window.addEventListener("click", handleClickOutsideModal);
+
+    return () => {
+      window.removeEventListener("click", handleClickOutsideModal);
+    };
+  }, []);
 
   return (
     <>
@@ -284,7 +285,7 @@ const Project = () => {
 
               </div>
 
-              <form onSubmit={e=>handleSubmit(e)}>
+              <form onSubmit={e => handleSubmit(e)}>
                 <div className="grid md:grid-cols-2 gap-4 mt-6">
                   <div>
                     <label className="font-semibold">Select Batch</label>
@@ -349,11 +350,11 @@ const Project = () => {
 
                   </div>
 
-                
+
                   <div>
                     <label className="font-semibold">language</label>
 
-                    <select name='language' value={language} onChange={handleChangeInput}className="form-input mt-2">
+                    <select name='language' value={language} onChange={handleChangeInput} className="form-input mt-2">
                       <option value=" ">Select Language</option>
                       <option value="Android">Android</option>
                       <option value="C/C++">C/C++</option>
@@ -418,7 +419,7 @@ const Project = () => {
 
                 <div className="grid grid-cols-1 mt-4">
 
-                  <button type="submit" onClick={e=>handleSubmit(e)} className="btn bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md w-48 mx-auto">Find Your Project</button>
+                  <button type="submit" onClick={e => handleSubmit(e)} className="btn bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md w-48 mx-auto">Find Your Project</button>
                 </div>
 
 
@@ -430,12 +431,12 @@ const Project = () => {
           </div>
         }
       </div>
-     
 
 
 
 
-     
+
+
 
       {isError !== "" && <h1>{isError}</h1>}
       <div className="container md:mt-24 mt-16 mb-16">
