@@ -30,7 +30,7 @@
     width: 40%;
     overflow: auto;
     z-index: 20;
-  
+    padding-bottom: 50px !important;
 
 }
 
@@ -46,4 +46,21 @@
     color: #000;
     text-decoration: none;
     cursor: pointer;
+}
+
+label {
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+
+}
+
+select,
+select>option {
+    justify-content: start;
+    align-items: start;
+    justify-items: start;
+    text-align: start;
+
 }

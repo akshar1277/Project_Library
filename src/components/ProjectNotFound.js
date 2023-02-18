@@ -1,12 +1,12 @@
 import React from 'react'
-import Header from './Header'
+import './projectnotfound.css';
 
 const ProjectNotFound = () => {
     return (
 
         <>
-            <Header></Header>
-            <div className="flex flex-col h-screen">
+           
+            <div className="flex flex-col mb-20 projectnotfound">
                 <div className="flex-grow"></div>
                 <div className="flex flex-col items-center justify-center">
                     <h1 className="text-4xl font-bold text-gray-800 mb-4">Oops! Project Not Found</h1>
