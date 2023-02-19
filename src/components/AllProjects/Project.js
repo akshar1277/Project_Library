@@ -85,6 +85,7 @@ const Project = () => {
 
     setData(searchdata);
     searchdata.length === 0 ? setNotfound(true) : setNotfound(false);
+    // setShowModal(false);
   };
   //this is for filter by chart click
   const searchbychart = (l, rdata) => {
@@ -169,9 +170,6 @@ const Project = () => {
     // console.log(out);
     // for not found page
     out.length === 0 ? setNotfound(true) : setNotfound(false);
-
-
-
     setShowModal(false);
     // document.body.classList.remove('overflow');
   };
@@ -249,26 +247,15 @@ const Project = () => {
 
 
   }
-  var filter_modal = document.getElementsByClassName('modal');
 
-  window.onclick = function (event) {
-
-    if (event.target == filter_modal) {
-
-      filter_modal.style.display = "hidden";
-
-    }
-
-
-
-  }
 
 
   useEffect(() => {
     const handleClickOutsideModal = (event) => {
+
       if (event.target.className === "modal") {
         setShowModal(false);
-        document.body.classList.remove('overflow');
+        // document.body.classList.remove('overflow');
 
 
 
@@ -279,9 +266,11 @@ const Project = () => {
 
     return () => {
       window.removeEventListener("click", handleClickOutsideModal);
-      console.log("event listing");
     };
   }, []);
+
+
+
   return (
     <>
 
@@ -339,7 +328,7 @@ const Project = () => {
         </div>
 
         {showModal &&
-          <div className="modal pb-14">
+          <div className="modal">
             <div className="modal-content">
               <span className="close -mt-5" onClick={handleCloseModal}>&times;</span>
 
