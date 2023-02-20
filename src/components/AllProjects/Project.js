@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import ReactPaginate from "react-paginate";
@@ -9,14 +9,16 @@ import ProjectNotFound from "../ProjectNotFound";
 
 
 
+
+
 const Project = () => {
-  let { languages, setfilter, hsearch, setHfilter , filteredData,setFData} = useContext(ChartContext);
+  let { languages, setfilter, hsearch, setHfilter, filteredData, setFData } = useContext(ChartContext);
 
-  
 
-  
+
+
   const [isError, setIsError] = useState("");
- 
+
   const [currentPage, setcurrentPage] = useState(1);
   const [itemsPerPage, setitemsPerPage] = useState(9);
   const [showModal, setShowModal] = useState(false);
@@ -31,9 +33,9 @@ const Project = () => {
 
   const [OriginalData, setOriginalData] = useState([]);
   const [data, setData] = useState([]);
- 
 
-  
+
+
 
   //modal filter
   const [formdata, setFormdata] = useState({
@@ -186,17 +188,17 @@ const Project = () => {
           // console.log(responses)
           const responseOne = responses[0];
           const responseTwo = responses[1];
-          const responseData = [...responseOne.data, ...responseTwo.data] 
-          if(filteredData.length===0){
+          const responseData = [...responseOne.data, ...responseTwo.data]
+          if (filteredData.length === 0) {
             setData(responseData);
-           
+
           }
-          else if(filteredData.length!=0){
-           
+          else if (filteredData.length != 0) {
+
             setData(filteredData);
-          
+
           }
-          
+
           setOriginalData(responseData);
 
 
@@ -211,8 +213,8 @@ const Project = () => {
       )
       .catch((error) => setIsError(error.message));
 
-     
-           
+
+
 
   }, []);
 
@@ -268,6 +270,35 @@ const Project = () => {
 
     return () => {
       window.removeEventListener("click", handleClickOutsideModal);
+    };
+
+
+  }, []);
+
+  const [inView, setInView] = useState(false);
+  const imgRef = useRef();
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          observer.disconnect();
+        }
+      },
+      {
+        rootMargin: '0px 0px 100px 0px',
+      }
+    );
+
+    if (imgRef.current) {
+      observer.observe(imgRef.current);
+    }
+
+    return () => {
+      if (imgRef.current) {
+        observer.unobserve(imgRef.current);
+      }
     };
   }, []);
 
@@ -546,7 +577,10 @@ const Project = () => {
                     "justify-content": "center",
                     "align-items": "center"
                   }} className="relative  overflow-hidden">
-                    <img style={{ "height": "234px" }} src={Preview_URL} alt="" />
+                    {/* <img style={{ "height": "234px" }} src={Preview_URL} alt="" /> */}
+                    <div style={{ height: '234px' }} ref={imgRef}>
+                      {inView && <img style={{ height: '234px' }} src={Preview_URL} alt={Project_name} />}
+                    </div>
 
                     <div className="absolute p-4 right-0 left-0 text-center bg-slate-900/80 -bottom-24 group-hover:bottom-0 transition-all duration-300">
                       <Link to={`/details/${Batch}/${id}`}>

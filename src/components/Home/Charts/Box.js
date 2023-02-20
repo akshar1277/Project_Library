@@ -54,7 +54,8 @@ const Box = ({ type }) => {
                 title: "Projects",
                 isMoney: false,
                 link: "see all Students",
-                amount: IDP_projects + UDP_projects
+                // amount: IDP_projects + UDP_projects,
+                amount: 89
 
             };
             break;
@@ -62,7 +63,8 @@ const Box = ({ type }) => {
             data = {
                 title: "IDP",
                 isMoney: false,
-                amount: IDP_projects,
+                // amount: IDP_projects,
+                amount: 74,
                 fullform: "Industry Defined Project"
 
             };
@@ -71,7 +73,8 @@ const Box = ({ type }) => {
             data = {
                 title: "UDP",
                 isMoney: false,
-                amount: UDP_projects,
+                // amount: UDP_projects,
+                amount: 15,
                 fullform: "User Defined Project"
             };
             break;
