@@ -10,15 +10,27 @@ export const ChartProvider = ({children}) => {
     let [languages,setLanguages]=useState('');
     let [hsearch,setHsearch]=useState('');
     let [filteredData,setFilteredData]=useState([]);
+    let [yfilteredData,setYFilteredData]=useState([]);
+
+    let [gfilteredData,setGFilteredData]=useState([]);
+    let [afilteredData,setAFilteredData]=useState([]);
 
     const navigate = useNavigate();
 
     let setFData=(f)=>{
         setFilteredData(f);
-        
-
-
-
+    }
+    
+    let setYFData=(f)=>{
+        setYFilteredData(f);
+    }
+    
+    let setGFData=(f)=>{
+        setGFilteredData(f);
+    }
+    
+    let setAFData=(f)=>{
+        setAFilteredData(f);
     }
 
     let setfilter=(lang)=>{
@@ -39,6 +51,13 @@ export const ChartProvider = ({children}) => {
         setHfilter:setHfilter,
         filteredData:filteredData,
         setFData:setFData,
+        yfilteredData:yfilteredData,
+        setYFData:setYFData,
+        gfilteredData:gfilteredData,
+        setGFData:setGFData,
+        afilteredData:afilteredData,
+        setAFData:setAFData,
+
 
         
     }

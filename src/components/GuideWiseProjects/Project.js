@@ -10,7 +10,7 @@ import ProjectNotFound from "../ProjectNotFound";
 
 
 const Project = () => {
-  let { languages, setfilter, filteredData,setFData } = useContext(ChartContext);
+  let { languages, setfilter, gfilteredData,setGFData } = useContext(ChartContext);
   const { fname} = useParams();
 
   const buttonStyle = {
@@ -84,7 +84,7 @@ const Project = () => {
     );
 
     setData(searchdata);
-   
+   setGFData(searchdata);
     searchdata.length === 0 ? setNotfound(true) : setNotfound(false);
   };
   //this is for filter by chart click
@@ -104,6 +104,7 @@ const Project = () => {
     );
 
     setData(searchdata2);
+    setGFData(searchdata2);
     setfilter("");
   };
 
@@ -141,6 +142,7 @@ const Project = () => {
     );
 
     setData(out);
+    setGFData(out);
     out.length === 0 ? setNotfound(true) : setNotfound(false);
     setShowModal(false);
    
@@ -173,9 +175,18 @@ const Project = () => {
             (item) =>
             item.Internal_guide.toLowerCase().includes(filters3.search2) 
           );
+          if(gfilteredData.length===0){
+            setData(searchdata2);
+           
+          }
+          else if(gfilteredData.length!=0){
+           
+            setData(gfilteredData);
+          
+          }
           
           setOriginalData(searchdata2); 
-          setData(searchdata2);
+         
 
         })
       )

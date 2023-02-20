@@ -10,7 +10,7 @@ import ProjectNotFound from "../ProjectNotFound";
 
 
 const Project = () => {
-  let { languages, setfilter } = useContext(ChartContext);
+  let { languages, setfilter,yfilteredData,setYFData } = useContext(ChartContext);
   const { fbetch } = useParams();
 
 
@@ -86,6 +86,7 @@ const Project = () => {
     );
 
     setData(searchdata);
+    setYFData(searchdata);
     searchdata.length === 0 ? setNotfound(true) : setNotfound(false);
 
   };
@@ -103,6 +104,7 @@ const Project = () => {
     );
     setOriginalData(searchdata2);
     setData(searchdata2);
+    setYFData(searchdata2);
 
   };
 
@@ -140,6 +142,7 @@ const Project = () => {
     );
 
     setData(out);
+    setYFData(out);
     out.length === 0 ? setNotfound(true) : setNotfound(false);
     setShowModal(false);
   };
@@ -171,9 +174,19 @@ const Project = () => {
             (item) =>
               item.Batch.toString().includes(filters3.search2.toString())
           );
-          setOriginalData(searchdata2);
-          setData(searchdata2);
+          if(yfilteredData.length===0){
+            setData(searchdata2);
 
+           
+          }
+          else if(yfilteredData.length!=0){
+           
+            setData(yfilteredData);
+          
+          }
+          setOriginalData(searchdata2);
+          // setData(searchdata2);
+        
 
         })
       )

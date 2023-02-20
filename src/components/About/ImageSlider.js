@@ -29,6 +29,17 @@ const data = [
         ],
     },
     {
+        id: 8,
+        name: 'Prof Bhavesh Oza',
+        position: 'Project Guide',
+        image: bhavesh,
+        links: [
+            { icon: <AiFillLinkedin />, url: '#' },
+            { icon: <AiFillGithub />, url: '#' },
+            { icon: <AiFillTwitterCircle />, url: '#' },
+        ],
+    },
+    {
         id: 2,
         name: 'Prof Bhavesh Oza',
         position: 'Project Guide',
