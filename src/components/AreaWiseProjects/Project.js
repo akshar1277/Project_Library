@@ -9,7 +9,7 @@ import './Project.css';
 import ProjectNotFound from "../ProjectNotFound";
 
 const Project = () => {
-  let { languages, setfilter } = useContext(ChartContext);
+  let { languages, setfilter,afilteredData,setAFData } = useContext(ChartContext);
   const { farea } = useParams();
   const buttonStyle = {
     background: "linear-gradient(#009FFD, #2A2A72)",
@@ -82,6 +82,7 @@ const Project = () => {
     );
 
     setData(searchdata);
+    setAFData(searchdata);
     searchdata.length === 0 ? setNotfound(true) : setNotfound(false);
   
   };
@@ -102,6 +103,7 @@ const Project = () => {
     );
 
     setData(searchdata2);
+    setAFData(searchdata2);
     setfilter("");
   };
 
@@ -139,7 +141,7 @@ const Project = () => {
     );
 
     setData(out);
-    
+    setAFData(out);
     out.length === 0 ? setNotfound(true) : setNotfound(false);
     setShowModal(false);
   };
@@ -171,8 +173,18 @@ const Project = () => {
             (item) =>
               item.Project_area.toLowerCase().includes(filters3.search2)
           );
+          if(afilteredData.length===0){
+            setData(searchdata2);
+           
+          }
+          else if(afilteredData.length!=0){
+           
+            setData(afilteredData);
+          
+          }
+          
           setOriginalData(searchdata2);
-          setData(searchdata2);
+         
         })
       )
       .catch((error) => setIsError(error.message));
