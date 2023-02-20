@@ -105,7 +105,7 @@ const Pie2 = () => {
             {/* <div>Pie2</div> */}
             {isError !== "" && <h2>{isError}</h2>}
 
-            <Chart type='pie' className="pie" series={chartdata.map((data) => data.value)}
+            <Chart type='pie' className="pie hover:cursor-pointer" series={chartdata.map((data) => data.value)}
                 options={{
                     chart: {
                         type: 'pie',

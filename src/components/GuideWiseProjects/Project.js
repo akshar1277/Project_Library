@@ -10,7 +10,7 @@ import ProjectNotFound from "../ProjectNotFound";
 
 
 const Project = () => {
-  let { languages, setfilter } = useContext(ChartContext);
+  let { languages, setfilter, filteredData,setFData } = useContext(ChartContext);
   const { fname} = useParams();
 
   const buttonStyle = {
@@ -173,6 +173,7 @@ const Project = () => {
             (item) =>
             item.Internal_guide.toLowerCase().includes(filters3.search2) 
           );
+          
           setOriginalData(searchdata2); 
           setData(searchdata2);
 
@@ -395,11 +396,12 @@ const Project = () => {
 
                     <select name='professor' value={professor} onChange={handleChangeInput} className="form-select mt-2 start">
                       <option value=" ">Select Professor Name</option>
-
                       <option value="bhavesh oza">Prof Bhavesh Oza
                       </option>
 
                       <option value="hetal pandya">Prof Hetal Pandya
+                      </option>
+                      <option value="hetal joshiyara">Prof Hetal joshiyara
                       </option>
                       <option value="hetal ghevariya">Prof Hetal Gevariya
                       </option>
@@ -412,6 +414,8 @@ const Project = () => {
                       </option>
 
                       <option value="maitrik shah">Prof Maitrik Shah
+                      </option>
+                      <option value="tushar champaneria">Prof Tushar Champaneria
                       </option>
                       <option value="nikunj domadiya">Prof Nikunj Domadiya
                       </option>

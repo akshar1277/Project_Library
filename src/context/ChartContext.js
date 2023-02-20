@@ -9,7 +9,17 @@ export const ChartProvider = ({children}) => {
 
     let [languages,setLanguages]=useState('');
     let [hsearch,setHsearch]=useState('');
+    let [filteredData,setFilteredData]=useState([]);
+
     const navigate = useNavigate();
+
+    let setFData=(f)=>{
+        setFilteredData(f);
+        
+
+
+
+    }
 
     let setfilter=(lang)=>{
         setLanguages(lang);
@@ -18,7 +28,7 @@ export const ChartProvider = ({children}) => {
     }
 
     let setHfilter=(Hsearch)=>{
-        setLanguages(Hsearch);
+        setHsearch(Hsearch);
         navigate('/allprojects')
 
     }
@@ -27,6 +37,8 @@ export const ChartProvider = ({children}) => {
         setfilter:setfilter,
         hsearch:hsearch,
         setHfilter:setHfilter,
+        filteredData:filteredData,
+        setFData:setFData,
 
         
     }

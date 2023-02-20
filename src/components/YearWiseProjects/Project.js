@@ -400,6 +400,8 @@ const Project = () => {
 
                       <option value="hetal pandya">Prof Hetal Pandya
                       </option>
+                      <option value="hetal joshiyara">Prof Hetal joshiyara
+                      </option>
                       <option value="hetal ghevariya">Prof Hetal Gevariya
                       </option>
                       <option value="hitesh rajpoot">Prof Hitesh Rajpoot
@@ -411,6 +413,8 @@ const Project = () => {
                       </option>
 
                       <option value="maitrik shah">Prof Maitrik Shah
+                      </option>
+                      <option value="tushar champaneria">Prof Tushar Champaneria
                       </option>
                       <option value="nikunj domadiya">Prof Nikunj Domadiya
                       </option>

@@ -12,6 +12,7 @@ import karika from './team/karika.jpg';
 import viren from './team/viren.jpg';
 import juhi from './team/juhi.jpg';
 import ishika from './team/ishika.jpg';
+import maitrik from './team/maitriksir.jpg';
 
 
 const data = [
@@ -19,7 +20,7 @@ const data = [
         id: 1,
         name: 'Prof Maitrik Shah',
         position: 'Project Guide',
-        image: "",
+        image: maitrik,
         links: [
             { icon: <AiFillLinkedin />, url: '#' },
             { icon: <AiFillGithub />, url: '#' },

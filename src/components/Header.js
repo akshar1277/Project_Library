@@ -3,7 +3,12 @@ import '../App.css'
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
+
 const Header = () => {
+    const onsubmit=()=>{
+        window.location.reload(true);
+    }
+   
 
 
 
@@ -37,7 +42,7 @@ const Header = () => {
                             <li><Link to="/" className="sub-menu-item" >Home</Link></li>
                             {/* <li><Link to="/notfound" className="sub-menu-item">Project Not Found</Link></li> */}
 
-                            <li><Link to="/allprojects" className="sub-menu-item">All Projects</Link></li>
+                            <li><Link to="/allprojects"  className="sub-menu-item">All Projects</Link></li>
 
 
                             <li className="has-submenu parent-parent-menu-item">
@@ -58,11 +63,13 @@ const Header = () => {
 
                                     <li><Link to="/guidewiseallprojects/bhavesh oza" className="sub-menu-item">Prof Bhavesh Oza</Link></li>
                                     <li><Link to="/guidewiseallprojects/hetal pandya" className="sub-menu-item">Prof Hetal Pandya</Link></li>
+                                    <li><Link to="/guidewiseallprojects/hetal joshiyara" className="sub-menu-item">Prof Hetal joshiyara</Link></li>
                                     <li><Link to="/guidewiseallprojects/hetal ghevariya" className="sub-menu-item">Prof Hetal Gevariya</Link></li>
                                     <li><Link to="/guidewiseallprojects/hitesh rajpoot" className="sub-menu-item">Prof Hitesh Rajpoot</Link></li>
                                     <li><Link to="/guidewiseallprojects/jay dave" className="sub-menu-item">Prof Jay Dave</Link></li>
                                     <li><Link to="/guidewiseallprojects/kalpesh patel" className="sub-menu-item">Prof Kalpesh Patel</Link></li>
                                     <li><Link to="/guidewiseallprojects/maitrik shah" className="sub-menu-item">Prof Maitrik Shah</Link></li>
+                                    <li><Link to="/guidewiseallprojects/tushar champaneria" className="sub-menu-item">Prof Tushar Champaneria</Link></li>
                                     <li><Link to="/guidewiseallprojects/nikunj domadiya" className="sub-menu-item">Prof Nikunj Domadiya</Link></li>
                                     <li><Link to="/guidewiseallprojects/pragnesh patel" className="sub-menu-item">Prof Pragnesh Patel</Link></li>
                                     <li><Link to="/guidewiseallprojects/pinal salot" className="sub-menu-item">Prof Pinal Salot</Link></li>

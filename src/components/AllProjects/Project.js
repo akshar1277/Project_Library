@@ -10,20 +10,13 @@ import ProjectNotFound from "../ProjectNotFound";
 
 
 const Project = () => {
-  let { languages, setfilter, hsearch, setHfilter } = useContext(ChartContext);
+  let { languages, setfilter, hsearch, setHfilter , filteredData,setFData} = useContext(ChartContext);
 
-  const buttonStyle = {
-    background: "linear-gradient(#009FFD, #2A2A72)",
-    color: "#fff",
-  };
-  const spanStyle = {
-    color: "#fff",
-  };
+  
 
-  const [myData, setMyData] = useState([]);
-  const [myData2, setMyData2] = useState([]);
+  
   const [isError, setIsError] = useState("");
-  const [data, setData] = useState([]);
+ 
   const [currentPage, setcurrentPage] = useState(1);
   const [itemsPerPage, setitemsPerPage] = useState(9);
   const [showModal, setShowModal] = useState(false);
@@ -37,7 +30,10 @@ const Project = () => {
   //Let one usestate for filterdata
 
   const [OriginalData, setOriginalData] = useState([]);
-  const [query, setQuery] = useState("");
+  const [data, setData] = useState([]);
+ 
+
+  
 
   //modal filter
   const [formdata, setFormdata] = useState({
@@ -84,6 +80,7 @@ const Project = () => {
     );
 
     setData(searchdata);
+    setFData(searchdata);
     searchdata.length === 0 ? setNotfound(true) : setNotfound(false);
     // setShowModal(false);
   };
@@ -128,6 +125,7 @@ const Project = () => {
     );
 
     setData(searchdataH);
+    setFData(searchdataH);
     setHfilter("");
   };
 
@@ -167,6 +165,7 @@ const Project = () => {
     );
 
     setData(out);
+    setFData(out);
     // console.log(out);
     // for not found page
     out.length === 0 ? setNotfound(true) : setNotfound(false);
@@ -186,17 +185,19 @@ const Project = () => {
           // console.log(responses)
           const responseOne = responses[0];
           const responseTwo = responses[1];
-          const responseData = [...responseOne.data, ...responseTwo.data];
-
-          setMyData(responseOne.data);
-          setMyData2(responseTwo.data);
-          const storedData = localStorage.getItem('data');
-
-
-          setData(responseData);
-
-
+          const responseData = [...responseOne.data, ...responseTwo.data] 
+          if(filteredData.length===0){
+            setData(responseData);
+           
+          }
+          else if(filteredData.length!=0){
+           
+            setData(filteredData);
+          
+          }
+          
           setOriginalData(responseData);
+
 
           if (languages) {
             searchbychart(languages, responseData);
@@ -208,11 +209,11 @@ const Project = () => {
         })
       )
       .catch((error) => setIsError(error.message));
+
+     
+           
+
   }, []);
-  // to store data in local storage
-  useEffect(() => {
-    localStorage.setItem('data', JSON.stringify(data));
-  }, [data]);
 
 
 
@@ -446,6 +447,8 @@ const Project = () => {
 
                       <option value="hetal pandya">Prof Hetal Pandya
                       </option>
+                      <option value="hetal joshiyara">Prof Hetal joshiyara
+                      </option>
                       <option value="hetal ghevariya">Prof Hetal Gevariya
                       </option>
                       <option value="hitesh rajpoot">Prof Hitesh Rajpoot
@@ -457,6 +460,8 @@ const Project = () => {
                       </option>
 
                       <option value="maitrik shah">Prof Maitrik Shah
+                      </option>
+                      <option value="tushar champaneria">Prof Tushar Champaneria
                       </option>
                       <option value="nikunj domadiya">Prof Nikunj Domadiya
                       </option>
