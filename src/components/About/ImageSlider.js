@@ -13,14 +13,24 @@ import viren from './team/viren.jpg';
 import juhi from './team/juhi.jpg';
 import ishika from './team/ishika.jpg';
 import maitrik from './team/maitriksir.jpg';
-
-
+import bhavesh from './team/bhavesh.jpg';
 const data = [
     {
         id: 1,
         name: 'Prof Maitrik Shah',
         position: 'Project Guide',
         image: maitrik,
+        links: [
+            { icon: <AiFillLinkedin />, url: '#' },
+            { icon: <AiFillGithub />, url: '#' },
+            { icon: <AiFillTwitterCircle />, url: '#' },
+        ],
+    },
+    {
+        id: 8,
+        name: 'Prof Bhavesh Oza',
+        position: 'Project Guide',
+        image: bhavesh,
         links: [
             { icon: <AiFillLinkedin />, url: '#' },
             { icon: <AiFillGithub />, url: '#' },
