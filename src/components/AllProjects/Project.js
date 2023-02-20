@@ -101,6 +101,7 @@ const Project = () => {
     );
 
     setData(searchdata2);
+    setFData(searchdata2);
     setfilter("");
 
 
