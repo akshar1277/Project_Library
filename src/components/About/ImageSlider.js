@@ -28,17 +28,7 @@ const data = [
             { icon: <AiFillTwitterCircle />, url: '#' },
         ],
     },
-    {
-        id: 8,
-        name: 'Prof Bhavesh Oza',
-        position: 'Project Guide',
-        image: bhavesh,
-        links: [
-            { icon: <AiFillLinkedin />, url: '#' },
-            { icon: <AiFillGithub />, url: '#' },
-            { icon: <AiFillTwitterCircle />, url: '#' },
-        ],
-    },
+   
     {
         id: 2,
         name: 'Prof Bhavesh Oza',
@@ -127,8 +117,8 @@ const ImageSlider = () => {
         speed: 500,
         slidesToShow: 4,
         slidesToScroll: 4,
-        prevArrow: <button className="slick-prev slick-arrow">Previous</button>,
-        nextArrow: <button className="slick-next slick-arrow">Next</button>
+        // prevArrow: <button className="slick-prev slick-arrow">Previous</button>,
+        // nextArrow: <button className="slick-next slick-arrow">Next</button>
     };
 
     return (

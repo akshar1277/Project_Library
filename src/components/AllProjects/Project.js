@@ -6,6 +6,8 @@ import { useContext } from "react";
 import ChartContext from "../../context/ChartContext";
 import './Project.css';
 import ProjectNotFound from "../ProjectNotFound";
+import {GrFormPrevious} from 'react-icons/gr';
+import {GrFormNext} from 'react-icons/gr';
 
 
 
@@ -275,32 +277,7 @@ const Project = () => {
 
   }, []);
 
-  const [inView, setInView] = useState(false);
-  const imgRef = useRef();
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setInView(true);
-          observer.disconnect();
-        }
-      },
-      {
-        rootMargin: '0px 0px 100px 0px',
-      }
-    );
-
-    if (imgRef.current) {
-      observer.observe(imgRef.current);
-    }
-
-    return () => {
-      if (imgRef.current) {
-        observer.unobserve(imgRef.current);
-      }
-    };
-  }, []);
 
 
 
@@ -574,19 +551,17 @@ const Project = () => {
                 >
                   <div style={{
                     "height": "234px", "display": "flex",
-                    "justify-content": "center",
-                    "align-items": "center"
+                    "justifyContent": "center",
+                    "alignItems": "center"
                   }} className="relative  overflow-hidden">
-                    {/* <img style={{ "height": "234px" }} src={Preview_URL} alt="" /> */}
-                    <div style={{ height: '234px' }} ref={imgRef}>
-                      {inView && <img style={{ height: '234px' }} src={Preview_URL} alt={Project_name} />}
-                    </div>
+                    <img style={{ "height": "234px" }} src={Preview_URL} alt="" />
+
 
                     <div className="absolute p-4 right-0 left-0 text-center bg-slate-900/80 -bottom-24 group-hover:bottom-0 transition-all duration-300">
-                      <Link to={`/details/${Batch}/${id}`}>
-                        <a className="btn btn-sm bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md">
+                      <Link to={`/details/${Batch}/${id}`} className="btn btn-sm bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md">
+                        
                           View More
-                        </a>
+                      
                       </Link>
                     </div>
                   </div>
@@ -635,12 +610,12 @@ const Project = () => {
             <ReactPaginate
               breakLabel="..."
               breakClassName={"w-[40px] h-[40px] inline-flex justify-center items-center text-slate-400 hover:text-white bg-white dark:bg-slate-900 border border-gray-100 dark:border-gray-700 hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 dark:hover:bg-indigo-600"}
-              nextLabel={<i className="uil uil-angle-right text-[20px] rtl:rotate-180 rtl:-mt-1"></i>}
+              nextLabel={<GrFormNext className="text-slate-400 bg-white dark:bg-slate-900 hover:text-white uil uil-angle-left text-[20px] rtl:rotate-180 rtl:-mt-1 text-blue-600 "/>}
 
               onPageChange={handlePageClick}
               pageRangeDisplayed={5}
               pageCount={pageCount}
-              previousLabel={<i className="uil uil-angle-left text-[20px] rtl:rotate-180 rtl:-mt-1"></i>}
+              previousLabel={<GrFormPrevious color="pink" className="text-slate-400 bg-white dark:bg-slate-900 hover:text-white uil uil-angle-left text-[20px] rtl:rotate-180 rtl:-mt-1 text-blue-600 "/>}
               renderOnZeroPageCount={null}
               containerClassName={
                 "inline-flex items-center -space-x-px"

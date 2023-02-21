@@ -22,7 +22,7 @@ const Header = () => {
                     </Link>
 
 
-                    <div className="menu-extras">
+                    {/* <div className="menu-extras">
                         <div className="menu-item">
 
                             <a className="navbar-toggle" id="isToggle" onclick="toggleMenu()">
@@ -34,7 +34,7 @@ const Header = () => {
                             </a>
 
                         </div>
-                    </div>
+                    </div> */}
 
                     <div id="navigation">
 
@@ -74,7 +74,7 @@ const Header = () => {
                                     <li><Link to="/guidewiseallprojects/pragnesh patel" className="sub-menu-item">Prof Pragnesh Patel</Link></li>
                                     <li><Link to="/guidewiseallprojects/pinal salot" className="sub-menu-item">Prof Pinal Salot</Link></li>
                                     <li><Link to="/guidewiseallprojects/parth dave" className="sub-menu-item">Prof Parth Dave</Link></li>
-                                    <li><a href="/guidewiseallprojects/dutta mam" className="sub-menu-item">POOJA Dutta Mam</a></li>
+                                    <li><Link href="/guidewiseallprojects/dutta mam" className="sub-menu-item">POOJA Dutta Mam</Link></li>
                                     <li><Link to="/guidewiseallprojects/rjayswal" className="sub-menu-item">Prof R. Jayswal</Link></li>
                                     <li><Link to="/guidewiseallprojects/yogesh patel" className="sub-menu-item">Prof Yogesh Patel</Link></li>
                                 </ul>
