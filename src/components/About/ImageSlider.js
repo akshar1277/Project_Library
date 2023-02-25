@@ -12,36 +12,40 @@ import karika from './team/karika.jpg';
 import viren from './team/viren.jpg';
 import juhi from './team/juhi.jpg';
 import ishika from './team/ishika.jpg';
-import maitrik from './team/maitriksir.jpg';
-import bhavesh from './team/bhavesh.jpg';
+import bhaveshsir from './team/bhaveshsir.jpg'
+import maitriksir from './team/maitriksir.jpg'
+
+
 const data = [
     {
         id: 1,
         name: 'Prof Maitrik Shah',
         position: 'Project Guide',
-        image: maitrik,
+        image: maitriksir,
         links: [
             { icon: <AiFillLinkedin />, url: '#' },
             { icon: <AiFillGithub />, url: '#' },
             { icon: <AiFillTwitterCircle />, url: '#' },
         ],
     },
-    {
-        id: 8,
-        name: 'Prof Bhavesh Oza',
-        position: 'Project Guide',
-        image: bhavesh,
-        links: [
-            { icon: <AiFillLinkedin />, url: '#' },
-            { icon: <AiFillGithub />, url: '#' },
-            { icon: <AiFillTwitterCircle />, url: '#' },
-        ],
-    },
+   
     {
         id: 2,
+        name: 'Prof Bhavesh Oza',
+        position: 'Project Guide',
+        image: bhaveshsir,
+        links: [
+            { icon: <AiFillLinkedin />, url: '#' },
+            { icon: <AiFillGithub />, url: '#' },
+            { icon: <AiFillTwitterCircle />, url: '#' },
+        ],
+    },
+
+    {
+        id: 3,
         name: 'Akshar Bhalani',
         position: 'Full-Stack Developer',
-        image:akshar,
+        image: akshar,
         links: [
             { icon: <AiFillLinkedin />, url: 'https://www.linkedin.com/in/akshar-bhalani1277' },
             { icon: <AiFillGithub />, url: 'https://github.com/akshar1277' },
@@ -49,7 +53,7 @@ const data = [
         ],
     },
     {
-        id: 3,
+        id: 4,
         name: 'Harshal Kahar',
         position: 'Full-Stack Developer',
         image: harshal,
@@ -60,7 +64,7 @@ const data = [
         ],
     },
     {
-        id: 4,
+        id: 5,
         name: 'Karika Patel',
         position: '.',
         image: karika,
@@ -71,7 +75,7 @@ const data = [
         ],
     },
     {
-        id: 5,
+        id: 6,
         name: 'Viren Goswami',
         position: '.',
         image: viren,
@@ -82,7 +86,7 @@ const data = [
         ],
     },
     {
-        id: 6,
+        id: 7,
         name: 'Juhi Sodha',
         position: '.',
         image: juhi,
@@ -93,7 +97,7 @@ const data = [
         ],
     },
     {
-        id: 7,
+        id: 8,
         name: 'Ishika Patel',
         position: '.',
         image: ishika,
@@ -113,8 +117,8 @@ const ImageSlider = () => {
         speed: 500,
         slidesToShow: 4,
         slidesToScroll: 4,
-        prevArrow: <button className="slick-prev slick-arrow">Previous</button>,
-        nextArrow: <button className="slick-next slick-arrow">Next</button>
+        // prevArrow: <button className="slick-prev slick-arrow">Previous</button>,
+        // nextArrow: <button className="slick-next slick-arrow">Next</button>
     };
 
     return (

@@ -905,7 +905,7 @@ try {
                     "enable": false,
                     "mode": "repulse"
                 },
-                "onclick": {
+                "onClick": {
                     "enable": false,
                     "mode": "push"
                 },

@@ -7,11 +7,13 @@ import ChartContext from "../../context/ChartContext";
 import { useParams } from "react-router-dom";
 import './Project.css';
 import ProjectNotFound from "../ProjectNotFound";
+import {GrFormPrevious} from 'react-icons/gr';
+import {GrFormNext} from 'react-icons/gr';
 
 
 const Project = () => {
-  let { languages, setfilter, gfilteredData,setGFData } = useContext(ChartContext);
-  const { fname} = useParams();
+  let { languages, setfilter, gfilteredData, setGFData } = useContext(ChartContext);
+  const { fname } = useParams();
 
   const buttonStyle = {
     background: "linear-gradient(#009FFD, #2A2A72)",
@@ -84,7 +86,7 @@ const Project = () => {
     );
 
     setData(searchdata);
-   setGFData(searchdata);
+    setGFData(searchdata);
     searchdata.length === 0 ? setNotfound(true) : setNotfound(false);
   };
   //this is for filter by chart click
@@ -145,7 +147,7 @@ const Project = () => {
     setGFData(out);
     out.length === 0 ? setNotfound(true) : setNotfound(false);
     setShowModal(false);
-   
+
   };
 
   // NOTE:  calling the function
@@ -164,29 +166,29 @@ const Project = () => {
 
           setMyData(responseOne.data);
           setMyData2(responseTwo.data);
-         
+
           const filters3 = {
             search2: fname.toLowerCase(),
           };
-      
+
           // console.log(getSearch);
-      
+
           const searchdata2 = responseData.filter(
             (item) =>
-            item.Internal_guide.toLowerCase().includes(filters3.search2) 
+              item.Internal_guide.toLowerCase().includes(filters3.search2)
           );
-          if(gfilteredData.length===0){
+          if (gfilteredData.length === 0) {
             setData(searchdata2);
-           
+
           }
-          else if(gfilteredData.length!=0){
-           
+          else if (gfilteredData.length != 0) {
+
             setData(gfilteredData);
-          
+
           }
-          
-          setOriginalData(searchdata2); 
-         
+
+          setOriginalData(searchdata2);
+
 
         })
       )
@@ -205,41 +207,41 @@ const Project = () => {
     setItemOffset(newOffset);
   };
 
-    // for modal
-    const [showModal, setShowModal] = useState(false);
+  // for modal
+  const [showModal, setShowModal] = useState(false);
 
-    const handleCloseModal = () => {
-      setShowModal(false);
-      document.body.classList.remove('blur');
-  
-    }
-  
-    const handleOpenModal = () => {
-      setShowModal(true);
-  
-      // document.body.classList.add('overflow');
-  
-  
-    }
-  
-  
-    useEffect(() => {
-      const handleClickOutsideModal = (event) => {
-        if (event.target.className === "modal") {
-          setShowModal(false);
-          // document.body.classList.remove('overflow');
-  
-  
-  
-        }
-      };
-  
-      window.addEventListener("click", handleClickOutsideModal);
-  
-      return () => {
-        window.removeEventListener("click", handleClickOutsideModal);
-      };
-    }, []);
+  const handleCloseModal = () => {
+    setShowModal(false);
+    document.body.classList.remove('blur');
+
+  }
+
+  const handleOpenModal = () => {
+    setShowModal(true);
+
+    // document.body.classList.add('overflow');
+
+
+  }
+
+
+  useEffect(() => {
+    const handleClickOutsideModal = (event) => {
+      if (event.target.className === "modal") {
+        setShowModal(false);
+        // document.body.classList.remove('overflow');
+
+
+
+      }
+    };
+
+    window.addEventListener("click", handleClickOutsideModal);
+
+    return () => {
+      window.removeEventListener("click", handleClickOutsideModal);
+    };
+  }, []);
 
   return (
     <>
@@ -250,7 +252,7 @@ const Project = () => {
             <h3 className="md:text-4xl text-3xl md:leading-normal leading-normal font-medium text-white">All Projects
             </h3>
             <div className="text-center subcribe-form mt-4 pt-2">
-            <form
+              <form
                 onSubmit={(e) => handlesearchsubmit(e)}
                 className="relative mx-auto max-w-xl"
               >
@@ -494,16 +496,18 @@ const Project = () => {
                   className="group relative rounded hover:-mt-1 shadow hover:shadow-md dark:shadow-gray-800 overflow-hidden transition-all duration-300"
                   key={id}
                 >
-                  <div style={{"height":"234px","display": "flex",
-"justify-content": "center",
-"align-items": "center"}} className="relative  overflow-hidden">
-                    <img  style={{"height":"234px"}} src={Preview_URL} alt="" />
+                  <div style={{
+                    "height": "234px", "display": "flex",
+                    "justifyContent": "center",
+                    "alignItems": "center"
+                  }} className="relative  overflow-hidden">
+                    <img style={{ "height": "234px" }} src={Preview_URL} alt="" />
 
                     <div className="absolute p-4 right-0 left-0 text-center bg-slate-900/80 -bottom-24 group-hover:bottom-0 transition-all duration-300">
-                      <Link to={`/details/${Batch}/${id}`}>
-                        <a className="btn btn-sm bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md">
+                      <Link to={`/details/${Batch}/${id}`} className="btn btn-sm bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md">
+                        
                           View More
-                        </a>
+                      
                       </Link>
                     </div>
                   </div>
@@ -539,41 +543,41 @@ const Project = () => {
                 </div>
               );
             })}
-          
-       
+
+
         </div>
       </div>
 
-      <div  className="grid md:grid-cols-12 grid-cols-1 mt-8 mb-16">
+      <div className="grid md:grid-cols-12 grid-cols-1 mt-8 mb-16">
         <div className="md:col-span-12 text-center">
-        <nav aria-label="Page navigation example">
-        
+          <nav aria-label="Page navigation example">
 
-            
-          <ReactPaginate
-            breakLabel="..."
-            breakClassName={"w-[40px] h-[40px] inline-flex justify-center items-center text-slate-400 hover:text-white bg-white dark:bg-slate-900 border border-gray-100 dark:border-gray-700 hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 dark:hover:bg-indigo-600"}
-            nextLabel={<i className="uil uil-angle-right text-[20px] rtl:rotate-180 rtl:-mt-1"></i>}
-            
-            onPageChange={handlePageClick}
-            pageRangeDisplayed={5}
-            pageCount={pageCount}
-            previousLabel={ <i className="uil uil-angle-left text-[20px] rtl:rotate-180 rtl:-mt-1"></i>}
-            renderOnZeroPageCount={null}
-            containerClassName={
-              "inline-flex items-center -space-x-px"
-            }
-            nextLinkClassName={"w-[40px] h-[40px] inline-flex justify-center items-center text-slate-400 bg-white dark:bg-slate-900 ltr:rounded-r-lg rtl:rounded-l-lg hover:text-white border border-gray-100 dark:border-gray-700 hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 dark:hover:bg-indigo-600"}
-            previousLinkClassName={"w-[40px] h-[40px] inline-flex justify-center items-center text-slate-400 bg-white dark:bg-slate-900 ltr:rounded-l-lg rtl:rounded-r-lg hover:text-white border border-gray-100 dark:border-gray-700 hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 dark:hover:bg-indigo-600"}
-            activeClassName={"z-10 w-[40px] h-[40px] inline-flex justify-center items-center text-white bg-indigo-600 border border-indigo-600"}
-            pageClassName={"w-[40px] h-[40px] inline-flex justify-center items-center text-slate-400 hover:text-white bg-white dark:bg-slate-900 border border-gray-100 dark:border-gray-700 hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 dark:hover:bg-indigo-600"}
-           
-          />
+
+
+            <ReactPaginate
+              breakLabel="..."
+              breakClassName={"w-[40px] h-[40px] inline-flex justify-center items-center text-slate-400 hover:text-white bg-white dark:bg-slate-900 border border-gray-100 dark:border-gray-700 hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 dark:hover:bg-indigo-600"}
+              nextLabel={<GrFormNext className="uil uil-angle-left text-[20px] rtl:rotate-180 rtl:-mt-1 text-blue-600"/>}
+
+              onPageChange={handlePageClick}
+              pageRangeDisplayed={5}
+              pageCount={pageCount}
+              previousLabel={<GrFormPrevious className="uil uil-angle-left text-[20px] rtl:rotate-180 rtl:-mt-1 text-blue-600"/>}
+              renderOnZeroPageCount={null}
+              containerClassName={
+                "inline-flex items-center -space-x-px"
+              }
+              nextLinkClassName={"w-[40px] h-[40px] inline-flex justify-center items-center text-slate-400 bg-white dark:bg-slate-900 ltr:rounded-r-lg rtl:rounded-l-lg hover:text-white border border-gray-100 dark:border-gray-700 hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 dark:hover:bg-indigo-600"}
+              previousLinkClassName={"w-[40px] h-[40px] inline-flex justify-center items-center text-slate-400 bg-white dark:bg-slate-900 ltr:rounded-l-lg rtl:rounded-r-lg hover:text-white border border-gray-100 dark:border-gray-700 hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 dark:hover:bg-indigo-600"}
+              activeClassName={"z-10 w-[40px] h-[40px] inline-flex justify-center items-center text-white bg-indigo-600 border border-indigo-600"}
+              pageClassName={"w-[40px] h-[40px] inline-flex justify-center items-center text-slate-400 hover:text-white bg-white dark:bg-slate-900 border border-gray-100 dark:border-gray-700 hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 dark:hover:bg-indigo-600"}
+
+            />
           </nav>
-          </div>
-          </div>
+        </div>
+      </div>
 
-          {notfound && (<>  <ProjectNotFound /></>)}
+      {notfound && (<>  <ProjectNotFound /></>)}
     </>
   );
 };

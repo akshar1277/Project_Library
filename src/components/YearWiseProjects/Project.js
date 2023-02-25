@@ -7,11 +7,17 @@ import ChartContext from "../../context/ChartContext";
 import { useParams } from "react-router-dom";
 import './Project.css';
 import ProjectNotFound from "../ProjectNotFound";
+import { GrFormPrevious } from 'react-icons/gr';
+import { GrFormNext } from 'react-icons/gr';
+
+
 
 
 const Project = () => {
-  let { languages, setfilter,yfilteredData,setYFData } = useContext(ChartContext);
+  let { languages, setfilter, yfilteredData, setYFData } = useContext(ChartContext);
   const { fbetch } = useParams();
+
+  const key='AIzaSyA7YULueLE-e7mIO2uc6u4WOVBadOayXPA';
 
 
   const buttonStyle = {
@@ -118,7 +124,7 @@ const Project = () => {
   const handleChangeInput = (event) => {
     // event.preventDefault();
     const { name, value } = event.target;
-    // console.log(name,value.toLowerCase());
+    console.log(name,value.toLowerCase());
     setFormdata({ ...formdata, [name]: value });
   };
 
@@ -174,19 +180,19 @@ const Project = () => {
             (item) =>
               item.Batch.toString().includes(filters3.search2.toString())
           );
-          if(yfilteredData.length===0){
+          if (yfilteredData.length === 0) {
             setData(searchdata2);
 
-           
+
           }
-          else if(yfilteredData.length!=0){
-           
+          else if (yfilteredData.length != 0) {
+
             setData(yfilteredData);
-          
+
           }
           setOriginalData(searchdata2);
           // setData(searchdata2);
-        
+
 
         })
       )
@@ -314,8 +320,9 @@ const Project = () => {
 
                     <select name='batch' value={batch} onChange={handleChangeInput} className="form-select mt-2">
                       <option value="">Select Batch</option>
-                      <option value="2020-21">2020-21</option>
                       <option value="2019-20">2019-20</option>
+                      <option value="2020-21">2020-21</option>
+
 
                     </select>
 
@@ -497,6 +504,7 @@ const Project = () => {
                 Internal_guide,
                 Preview_URL,
               } = post;
+              const key='AIzaSyA7YULueLE-e7mIO2uc6u4WOVBadOayXPA';
               return (
                 <div
                   className="group relative rounded hover:-mt-1 shadow hover:shadow-md dark:shadow-gray-800 overflow-hidden transition-all duration-300"
@@ -504,16 +512,16 @@ const Project = () => {
                 >
                   <div style={{
                     "height": "234px", "display": "flex",
-                    "justify-content": "center",
-                    "align-items": "center"
+                    "justifyContent": "center",
+                    "alignItems": "center"
                   }} className="relative  overflow-hidden">
-                    <img style={{ "height": "234px" }} src={Preview_URL} alt="" />
+                    <img style={{ "height": "234px" }} src={`${Preview_URL}&${key}`} alt="" />
 
                     <div className="absolute p-4 right-0 left-0 text-center bg-slate-900/80 -bottom-24 group-hover:bottom-0 transition-all duration-300">
-                      <Link to={`/details/${Batch}/${id}`}>
-                        <a className="btn btn-sm bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md">
-                          View More
-                        </a>
+                      <Link to={`/details/${Batch}/${id}`} className="btn btn-sm bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md">
+
+                        View More
+
                       </Link>
                     </div>
                   </div>
@@ -563,18 +571,18 @@ const Project = () => {
             <ReactPaginate
               breakLabel="..."
               breakClassName={"w-[40px] h-[40px] inline-flex justify-center items-center text-slate-400 hover:text-white bg-white dark:bg-slate-900 border border-gray-100 dark:border-gray-700 hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 dark:hover:bg-indigo-600"}
-              nextLabel={<i className="uil uil-angle-right text-[20px] rtl:rotate-180 rtl:-mt-1"></i>}
+              nextLabel={<GrFormNext className="uil uil-angle-left text-[20px] rtl:rotate-180 rtl:-mt-1 " />}
 
               onPageChange={handlePageClick}
               pageRangeDisplayed={5}
               pageCount={pageCount}
-              previousLabel={<i className="uil uil-angle-left text-[20px] rtl:rotate-180 rtl:-mt-1"></i>}
+              previousLabel={<GrFormPrevious className="uil uil-angle-left text-[20px] rtl:rotate-180 rtl:-mt-1 " />}
               renderOnZeroPageCount={null}
               containerClassName={
                 "inline-flex items-center -space-x-px"
               }
-              nextLinkClassName={"w-[40px] h-[40px] inline-flex justify-center items-center text-slate-400 bg-white dark:bg-slate-900 ltr:rounded-r-lg rtl:rounded-l-lg hover:text-white border border-gray-100 dark:border-gray-700 hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 dark:hover:bg-indigo-600"}
-              previousLinkClassName={"w-[40px] h-[40px] inline-flex justify-center items-center text-slate-400 bg-white dark:bg-slate-900 ltr:rounded-l-lg rtl:rounded-r-lg hover:text-white border border-gray-100 dark:border-gray-700 hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 dark:hover:bg-indigo-600"}
+              nextLinkClassName={"w-[40px] h-[40px] inline-flex justify-center items-center text-indigo-400 bg-white dark:bg-slate-900 ltr:rounded-r-lg rtl:rounded-l-lg hover:text-white border border-gray-100 dark:border-gray-700 hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 dark:hover:bg-indigo-600"}
+              previousLinkClassName={"w-[40px] h-[40px] inline-flex justify-center items-center text-indigo-400 bg-white dark:bg-slate-900 ltr:rounded-l-lg rtl:rounded-r-lg hover:text-white border border-gray-100 dark:border-gray-700 hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 dark:hover:bg-indigo-600"}
               activeClassName={"z-10 w-[40px] h-[40px] inline-flex justify-center items-center text-white bg-indigo-600 border border-indigo-600"}
               pageClassName={"w-[40px] h-[40px] inline-flex justify-center items-center text-slate-400 hover:text-white bg-white dark:bg-slate-900 border border-gray-100 dark:border-gray-700 hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 dark:hover:bg-indigo-600"}
 
