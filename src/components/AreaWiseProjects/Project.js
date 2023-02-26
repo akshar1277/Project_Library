@@ -56,9 +56,9 @@ const Project = () => {
   //Let 2 variable to store api for multiple api roting
 
   let first =
-    "https://department-website.onrender.com/Project_2019-2020/?format=json";
+    "http://127.0.0.1:8000/Project_2019-2020/?format=json";
   let second =
-    "https://department-website.onrender.com/Project_2020-2021/?format=json";
+    "http://127.0.0.1:8000/Project_2020-2021/?format=json";
 
   const res = axios.get(first);
   const res2 = axios.get(second);
@@ -492,6 +492,7 @@ const Project = () => {
                 Internal_guide,
                 Preview_URL,
               } = post;
+              const key='AIzaSyA7YULueLE-e7mIO2uc6u4WOVBadOayXPA';
               return (
                 <div
                   className="group relative rounded hover:-mt-1 shadow hover:shadow-md dark:shadow-gray-800 overflow-hidden transition-all duration-300"
@@ -502,7 +503,7 @@ const Project = () => {
                     "justifyContent": "center",
                     "alignItems": "center"
                   }} className="relative  overflow-hidden">
-                    <img style={{ "height": "234px" }} src={Preview_URL} alt="" />
+                    <img style={{ "height": "234px" }} src={`${Preview_URL}&${key}`} alt="" />
 
                     <div className="absolute p-4 right-0 left-0 text-center bg-slate-900/80 -bottom-24 group-hover:bottom-0 transition-all duration-300">
                     <Link to={`/details/${Batch}/${id}`} className="btn btn-sm bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md">

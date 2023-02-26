@@ -54,8 +54,8 @@ const Pie2 = () => {
 
     ];
 
-    let first = "https://department-website.onrender.com/Project_2019-2020/?format=json"
-    let second = "https://department-website.onrender.com/Project_2020-2021/?format=json"
+    let first = "http://127.0.0.1:8000/Project_2019-2020/?format=json"
+    let second = "http://127.0.0.1:8000/Project_2020-2021/?format=json"
 
 
 
