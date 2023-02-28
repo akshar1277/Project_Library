@@ -12,7 +12,7 @@ const ProjectDetail = () => {
     window.scrollTo(0, 0);
     let projectdata = async () => {
       await fetch(
-        `https://department-website.onrender.com/Project_${betch}/${id}`
+        `http://127.0.0.1:8000/Project_${betch}/${id}`
       )
         .then((res) => {
           if (res.ok) {
@@ -35,6 +35,7 @@ const ProjectDetail = () => {
   //   console.log(language);
 
   // })
+  const key='AIzaSyA7YULueLE-e7mIO2uc6u4WOVBadOayXPA';
 
 
 
@@ -48,7 +49,7 @@ const ProjectDetail = () => {
             <div className="lg:col-span-8 md:col-span-6">
               <div className="p-6 rounded-md shadow dark:shadow-gray-800">
                 <img
-                  src={data.Preview_URL}
+                  src={`${data.Preview_URL}&${key}`}
                   className="rounded-md"
                   alt={data.Project_name}
                 />

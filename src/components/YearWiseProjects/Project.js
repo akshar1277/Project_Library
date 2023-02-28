@@ -11,13 +11,9 @@ import { GrFormPrevious } from 'react-icons/gr';
 import { GrFormNext } from 'react-icons/gr';
 
 
-
-
 const Project = () => {
   let { languages, setfilter, yfilteredData, setYFData } = useContext(ChartContext);
   const { fbetch } = useParams();
-
-  const key='AIzaSyA7YULueLE-e7mIO2uc6u4WOVBadOayXPA';
 
 
   const buttonStyle = {
@@ -64,9 +60,9 @@ const Project = () => {
   //Let 2 variable to store api for multiple api roting
 
   let first =
-    "https://department-website.onrender.com/Project_2019-2020/?format=json";
+    "http://127.0.0.1:8000/Project_2019-2020/?format=json";
   let second =
-    "https://department-website.onrender.com/Project_2020-2021/?format=json";
+    "http://127.0.0.1:8000/Project_2020-2021/?format=json";
 
   const res = axios.get(first);
   const res2 = axios.get(second);

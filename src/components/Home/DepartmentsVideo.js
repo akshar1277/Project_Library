@@ -24,8 +24,8 @@ const DepartmentsVideo = () => {
 
                     <div className="md:col-span-7">
                         <div className="ltr:lg:ml-4 rtl:lg:mr-4">
-                            <h4 className="mb-6 md:text-3xl text-2xl lg:leading-normal leading-normal font-medium">Department of <br /> Computer Engineering </h4>
-                            <p className="text-slate-400 max-w-xl">Computer Engineers venture into various fields such as web-development, Computer Support Specialist, Computer Systems Analyst ,Computer Systems Designer, Database Administrator, Network Administrator and much more. Future opportunities in this field are beyond boundaries. Computer Engineering Department in L.D.C.E covers a wide spectrum of topics in data communication, computer networking, operating systems, microprocessor programming and applications, parallel processing, compiler design, system programming, software engineering, simulation and modeling, distributed systems, graphics and image processing, various packages and softwares like ORACLE, JAVA, VC++ etc. </p>
+                            <h4 className="mb-6 md:text-3xl text-2xl lg:leading-normal leading-normal font-medium">Department of Computer Engineering </h4>
+                            <p className="text-slate-400  text-justify">Computer Engineers venture into various fields such as web-development, Computer Support Specialist, Computer Systems Analyst ,Computer Systems Designer, Database Administrator, Network Administrator and much more. Future opportunities in this field are beyond boundaries. Computer Engineering Department in L.D.C.E covers a wide spectrum of topics in data communication, computer networking, operating systems, microprocessor programming and applications, parallel processing, compiler design, system programming, software engineering, simulation and modeling, distributed systems, graphics and image processing, various packages and softwares like ORACLE, JAVA, VC++ etc. </p>
 
 
                         </div>
