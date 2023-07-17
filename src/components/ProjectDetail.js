@@ -12,7 +12,7 @@ const ProjectDetail = () => {
     window.scrollTo(0, 0);
     let projectdata = async () => {
       await fetch(
-        `http://127.0.0.1:8000/Project_${betch}/${id}`
+        `https://department-library.onrender.com/Project_${betch}/${id}`
       )
         .then((res) => {
           if (res.ok) {

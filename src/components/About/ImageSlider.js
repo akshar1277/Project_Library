@@ -47,7 +47,7 @@ const data = [
         position: 'Full-Stack Developer',
         image: akshar,
         links: [
-            { icon: <AiFillLinkedin />, url: 'https://www.linkedin.com/in/akshar-bhalani1277' },
+            { icon: <AiFillLinkedin />, url: 'https://www.linkedin.com/in/akshar-bhalani' },
             { icon: <AiFillGithub />, url: 'https://github.com/akshar1277' },
             { icon: <AiFillTwitterCircle />, url: 'https://twitter.com/b_akshar' },
         ],

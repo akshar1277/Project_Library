@@ -60,9 +60,9 @@ const Project = () => {
   //Let 2 variable to store api for multiple api roting
 
   let first =
-    "http://127.0.0.1:8000/Project_2019-2020/?format=json";
+    "https://department-library.onrender.com/Project_2019-2020/?format=json";
   let second =
-    "http://127.0.0.1:8000/Project_2020-2021/?format=json";
+    "https://department-library.onrender.com/Project_2020-2021/?format=json";
 
   const res = axios.get(first);
   const res2 = axios.get(second);
